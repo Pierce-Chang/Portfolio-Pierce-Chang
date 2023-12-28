@@ -1,0 +1,49 @@
+$background-color: #141D2F;
+$green: #70E61C;
+$purple: #9747FF;
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    border: 1px solid red;
+
+    img {
+        width: 150px;
+    }
+
+    h2 {
+        color: white;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 29px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        transition: all 200ms ease-in-out;
+        font-size: 23px;
+        font-weight: 400;
+
+        &:hover {
+            color: $green;
+        }
+    }
+}
+
+.link-underline {
+    width: 55px;
+    border-bottom: 3px solid $purple;
+    padding-bottom: 4px;
+    transition: all 200ms ease-in-out;
+}
