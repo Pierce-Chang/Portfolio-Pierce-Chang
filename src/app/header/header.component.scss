@@ -3,6 +3,8 @@ $green: #70E61C;
 $purple: #9747FF;
 
 header {
+    z-index: 9999;
+    background-color: $background-color;
     position: fixed;
     top: 0;
     left: 0;
@@ -12,7 +14,6 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 100px;
-    border: 1px solid red;
 
     img {
         width: 150px;
@@ -38,12 +39,22 @@ header {
         &:hover {
             color: $green;
         }
+
+        &:focus {
+            .active {
+                width: 55px;
+                border-bottom: 3px solid $purple;
+                padding-bottom: 4px;
+                transition: all 200ms ease-in-out;
+            }
+        }
+    }
+
+    .active{
+        width: 55px;
+        border-bottom: 3px solid $purple;
+        padding-bottom: 4px;
+        transition: all 200ms ease-in-out;
     }
 }
 
-.link-underline {
-    width: 55px;
-    border-bottom: 3px solid $purple;
-    padding-bottom: 4px;
-    transition: all 200ms ease-in-out;
-}
