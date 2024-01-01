@@ -1,0 +1,55 @@
+$background-color: #141D2F;
+$green: #70E61C;
+$purple: #9747FF;
+
+
+.container-skills {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    padding-top: 110px;
+
+    .skill-icons {
+        display: grid; // Use grid instead of flex
+        grid-template-columns: repeat(4, 1fr); // Create 4 columns
+        grid-template-rows: repeat(3, 1fr); // Create 3 rows
+        justify-items: center; // Center items horizontally
+        align-items: center; // Center items vertically
+        gap: 25px; // Space between grid items
+        width: 721px;
+
+        img {
+            padding: 25px 50px;
+            cursor: pointer;
+        }
+    }
+
+
+    .my-skills-p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 471px;
+        color: white;
+
+        h2 {
+            font-size: 90px;
+            font-weight: 700;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            text-align: right;
+        }
+    }
+}
+
+.my-skills-line {
+    width: 58px;
+    height: 4px;
+    color: white;
+}

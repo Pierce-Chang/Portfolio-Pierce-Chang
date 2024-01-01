@@ -5,7 +5,7 @@ $purple: #9747FF;
 header {
     z-index: 9999;
     background-color: $background-color;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
@@ -57,4 +57,3 @@ header {
         transition: all 200ms ease-in-out;
     }
 }
-

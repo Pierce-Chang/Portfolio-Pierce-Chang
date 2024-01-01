@@ -6,12 +6,16 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WhoamiComponent } from './whoami/whoami.component';
+import { AboutMeComponent } from './about-me/about-me.component';
+import { MySkillsComponent } from './my-skills/my-skills.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    WhoamiComponent
+    WhoamiComponent,
+    AboutMeComponent,
+    MySkillsComponent
   ],
   imports: [
     BrowserModule,
