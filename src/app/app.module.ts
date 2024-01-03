@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WhoamiComponent } from './whoami/whoami.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { MySkillsComponent } from './my-skills/my-skills.component';
+import { PortfolioHeadComponent } from './portfolio-head/portfolio-head.component';
+import { PortfolioProjectsComponent } from './portfolio-projects/portfolio-projects.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { MySkillsComponent } from './my-skills/my-skills.component';
     HeaderComponent,
     WhoamiComponent,
     AboutMeComponent,
-    MySkillsComponent
+    MySkillsComponent,
+    PortfolioHeadComponent,
+    PortfolioProjectsComponent
   ],
   imports: [
     BrowserModule,
