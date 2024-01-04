@@ -1,1 +1,23 @@
-<p>portfolio-projects works!</p>
+<section [ngClass]="{'reversed-section': isReversed}">
+    <div *ngIf="isReversed" class="project-infos align-end">
+        <h3>{{ title }}</h3>
+        <p class="languages">{{ languages }}</p>
+        <p>{{ description }}</p>
+        <div class="container-buttons justify-end">
+            <button class="live-test">Live test</button>
+            <button class="github">Github</button>
+        </div>
+    </div>
+
+    <img [src]="imageUrl" alt="{{ title }}">
+    
+    <div *ngIf="!isReversed" class="project-infos">
+        <h3>{{ title }}</h3>
+        <p class="languages">{{ languages }}</p>
+        <p>{{ description }}</p>
+        <div class="container-buttons flex-end">
+            <button class="live-test">Live test</button>
+            <button class="github">Github</button>
+        </div>
+    </div>
+</section>

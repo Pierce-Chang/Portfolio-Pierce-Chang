@@ -3,16 +3,16 @@
 
 <nav>
     <div>
-        <a id="tab1" class="active" href="#about-me">About me</a>
-        <div class="link-underline"></div>
+        <a id="tab1" href="#about-me" (click)="setActiveLink('tab1')" [class.active]="activeLink === 'tab1'">About me</a>
+        <div class="link-underline" [class.active]="activeLink === 'tab1'"></div>
     </div>
     <div>
-        <a id="tab2" href="#my-skills">Skills</a>
-        <div class="link-underline"></div>
+        <a id="tab2" href="#my-skills" (click)="setActiveLink('tab2')" [class.active]="activeLink === 'tab2'">Skills</a>
+        <div class="link-underline" [class.active]="activeLink === 'tab2'"></div>
     </div>
     <div>
-        <a id="tab3" href="#portfolio">Portfolio</a>
-        <div></div>
+        <a id="tab3" href="#portfolio" (click)="setActiveLink('tab3')" [class.active]="activeLink === 'tab3'">Portfolio</a>
+        <div class="link-underline" [class.active]="activeLink === 'tab3'"></div>
     </div>
 </nav>
 </header>

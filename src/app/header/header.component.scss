@@ -40,20 +40,11 @@ header {
             color: $green;
         }
 
-        &:focus {
-            .active {
-                width: 55px;
-                border-bottom: 3px solid $purple;
-                padding-bottom: 4px;
-                transition: all 200ms ease-in-out;
-            }
+        &.active{
+            width: 55px;
+            border-bottom: 3px solid $purple;
+            padding-bottom: 4px;
+            transition: all 200ms ease-in-out;
         }
-    }
-
-    .active{
-        width: 55px;
-        border-bottom: 3px solid $purple;
-        padding-bottom: 4px;
-        transition: all 200ms ease-in-out;
     }
 }
