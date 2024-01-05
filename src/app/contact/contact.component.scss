@@ -1,3 +1,7 @@
+$background-color: #141D2F;
+$green: #70E61C;
+$purple: #9747FF;
+
 section {
     padding-top: 100px;
     display: flex;
@@ -16,11 +20,97 @@ section {
         justify-content: space-between;
         width: 100%;
 
-        h3 {
-            color: white;
-            font-size: 32px;
-            font-weight: 700;
-            margin-block-start: 0;
+        .container-contact-me {
+            width: 40%;
+
+            h3 {
+                color: white;
+                font-size: 32px;
+                font-weight: 700;
+                margin-block-start: 0;
+            }
+
+            p {
+                color: white;
+                font-size: 16px;
+                font-weight: 400;
+                margin-block-start: 0;
+
+                span {
+                    font-weight: 700;
+                    font-size: 19px;
+                }
+            }
+        }
+
+        form {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                margin-right: 12px;
+            }
+
+            .name-email-input {
+                width: 100%;
+                padding: 15px 25px;
+                border: 1px solid $purple;
+                background-color: transparent;
+                border-radius: 10px;
+                margin-bottom: 32px;
+            }
+
+            .form-textarea {
+                width: 100%;
+                height: 202px;
+                padding: 15px 25px;
+                border: 1px solid $purple;
+                background-color: transparent;
+                border-radius: 10px;
+            }
+
+            .container-accept {
+                display: flex;
+
+                label {
+                    color: white;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+
+                span {
+                    color: $purple;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+
+                #accept-checkbox {
+                    border: 1px solid $green;
+                    width: 20px;
+                }
+
+            
+            }
         }
     }
+}
+
+.submit-button {
+    background-color: #B6B6B6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    margin-top: 34px;
+    font-size: 23px;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+}
+
+.form-group {
+    width: 100%;
 }

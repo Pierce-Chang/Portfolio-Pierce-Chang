@@ -3,25 +3,32 @@
     <h2>Contact</h2>
 
     <div class="container-text-form">
-        <div>
+        <div class="container-contact-me">
             <h3>Got a problem to solve?</h3>
+            <p>Contact me through this form, I am interested in hearing you, knowing your ideas and contributing to your projects with my work.</p>
+            <p>Need a Frontend developer? <span>Contact me!</span></p>
         </div>
 
             <form>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Name</label>
-                    <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+                    <input type="name" class="name-email-input" id="exampleFormControlInput1" placeholder="Your name">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+                    <input type="email" class="name-email-input" id="exampleFormControlInput1" placeholder="Your email">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Message</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                        placeholder="Message"></textarea>
+                    <textarea class="form-textarea" id="exampleFormControlTextarea1" rows="3"
+                        placeholder="Your message"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="container-accept">
+                    <div>
+                        <img [src]="checkboxImage[0]" alt="">
+                        <input style="display: none;" type="checkbox" name="accept" id="accept-checkbox">
+                    </div>
+                    <label for="accept">I've read the <span>privacy policy</span> and agree to the processing of my data as outlined.</label>
+                </div>
+    
+                <button type="submit" class="submit-button">{{ buttonText }}</button>
             </form>
     </div>
 

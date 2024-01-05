@@ -11,6 +11,7 @@ import { MySkillsComponent } from './my-skills/my-skills.component';
 import { PortfolioHeadComponent } from './portfolio-head/portfolio-head.component';
 import { PortfolioProjectsComponent } from './portfolio-projects/portfolio-projects.component';
 import { ContactComponent } from './contact/contact.component';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ContactComponent } from './contact/contact.component';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
