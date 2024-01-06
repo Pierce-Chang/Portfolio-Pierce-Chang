@@ -12,6 +12,7 @@ import { PortfolioHeadComponent } from './portfolio-head/portfolio-head.componen
 import { PortfolioProjectsComponent } from './portfolio-projects/portfolio-projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
     MySkillsComponent,
     PortfolioHeadComponent,
     PortfolioProjectsComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

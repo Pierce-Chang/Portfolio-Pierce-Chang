@@ -9,8 +9,13 @@ section {
     align-items: center;
     padding-bottom: 100px;
 
+    .spacer {
+        width: 120px;
+        height: 200px;
+    }
 
     img {
+        width: 450px;
         position: relative;
         z-index: 1;
     }
@@ -27,7 +32,8 @@ section {
     }
 
      .project-infos {
-        width: 513px;
+        margin: 0 100px;
+        width: 40%;
         display: flex;
         flex-direction: column;
 

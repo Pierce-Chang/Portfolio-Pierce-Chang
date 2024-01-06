@@ -42,7 +42,8 @@ section {
         }
     }
 
-    button {
+    a {
+        text-decoration: none;
         margin-top: 50px;
         background-color: $green;
         border: none;
