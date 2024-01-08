@@ -143,12 +143,12 @@ section {
     font-size: 23px;
     font-weight: 400;
     font-family: "Poppins", sans-serif;
-    cursor: pointer;
     transition: all 100ms ease-in-out;
 }
 
 .submit-button-enabled {
-    background-color: $green !important;
+    background-color: $green ;
+    cursor: pointer;
 }
 
 .form-group {

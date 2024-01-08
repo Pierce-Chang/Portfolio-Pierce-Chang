@@ -29,11 +29,14 @@ export class ContactComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    // Rest of your submit logic
-    console.log(this.messageForm.value);
-    this.messageForm.reset();
-  }
+    if (this.messageForm.valid) {
+      console.log(this.messageForm.value);
+      // Your submission logic here
   
+      this.messageForm.reset();
+    }
+  }
+
   get name() {
     return this.messageForm.get('name');
   }
@@ -42,7 +45,7 @@ export class ContactComponent implements OnInit {
     return this.messageForm.get('email');
   }
   
-  get text() { // Renamed power to text
+  get text() {
     return this.messageForm.get('text');
   }
 }

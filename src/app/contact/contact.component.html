@@ -17,8 +17,8 @@
 
 
                 <div class="form-group">
-                    <input type="text" id="name" name="name" class="name-email-input" required minlength="4"
-                        placeholder="Your name" formControlName="name" />
+                    <input type="text" id="name" name="name" class="name-email-input" placeholder="Your name"
+                        formControlName="name" />
                     <div *ngIf="name?.invalid && (name?.dirty || name?.touched || submitted)" class="alert">
                         <div *ngIf="name?.errors?.['required']">Name is required.</div>
                         <div *ngIf="name?.errors?.['minlength']">
@@ -30,8 +30,8 @@
 
 
                 <div class="form-group">
-                    <input type="email" id="email" name="email" class="name-email-input" required minlength="4"
-                        placeholder=" Your email" formControlName="email"/>
+                    <input type="email" id="email" name="email" class="name-email-input" placeholder=" Your email"
+                        formControlName="email" />
                     <div *ngIf="email?.invalid && (email?.dirty || email?.touched || submitted)" class="alert">
                         <div *ngIf="email?.errors?.['required']">Email is required.</div>
                         <div *ngIf="email?.errors?.['minlength']">
@@ -46,12 +46,12 @@
 
 
                 <div class="form-group">
-                    <textarea class="form-textarea" id="exampleFormControlTextarea1" rows="3" name="message" required
-                        minlength="4" placeholder="Your message" formControlName="text"></textarea>
+                    <textarea class="form-textarea" id="exampleFormControlTextarea1" rows="3" name="message"
+                        placeholder="Your message" formControlName="text"></textarea>
                     <div *ngIf="text?.invalid && (text?.dirty || text?.touched || submitted)" class="alert">
                         <div *ngIf="text?.errors?.['required']">Email is required.</div>
                         <div *ngIf="text?.errors?.['minlength']">
-                            Message must be at least 4 characters long.
+                            Message must be at least 10 characters long.
                         </div>
                     </div>
                 </div>
@@ -59,10 +59,11 @@
 
                 <div class="container-accept">
                     <div>
-                        <img [src]="isChecked ? checkboxImage[1] : checkboxImage[0]" alt=""
-                            (click)="isChecked = !isChecked">
+                        <img [src]="messageForm.controls['accept'].value ? checkboxImage[1] : checkboxImage[0]"
+                            alt="checkbox"
+                            (click)="messageForm.controls['accept'].setValue(!messageForm.controls['accept'].value)">
                         <input style="display: none;" type="checkbox" name="accept" id="accept-checkbox"
-                         formControlName="accept">
+                            formControlName="accept">
                     </div>
                     <label for="accept">I've read the <span>privacy policy</span> and agree to the processing of my data
                         as outlined.</label>
