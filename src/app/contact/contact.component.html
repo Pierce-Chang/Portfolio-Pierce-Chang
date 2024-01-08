@@ -5,31 +5,76 @@
     <div class="container-text-form">
         <div class="container-contact-me">
             <h3>Got a problem to solve?</h3>
-            <p>Contact me through this form, I am interested in hearing<br> you, knowing your ideas and contributing to your projects<br> with my work.</p>
+            <p>Contact me through this form, I am interested in hearing<br> you, knowing your ideas and contributing to
+                your projects<br> with my work.</p>
             <p>Need a Frontend developer? <span>Contact me!</span></p>
         </div>
 
         <div class="container-form">
-            <form>
+            <form [formGroup]="messageForm" (ngSubmit)="onSubmit()"
+                action="http://pierce-chang.de/pierce-changde/send_mail.php" method="post">
+
+
+
                 <div class="form-group">
-                    <input type="name" class="name-email-input" id="exampleFormControlInput1" placeholder="Your name">
+                    <input type="text" id="name" name="name" class="name-email-input" required minlength="4"
+                        placeholder="Your name" formControlName="name" />
+                    <div *ngIf="name?.invalid && (name?.dirty || name?.touched || submitted)" class="alert">
+                        <div *ngIf="name?.errors?.['required']">Name is required.</div>
+                        <div *ngIf="name?.errors?.['minlength']">
+                            Name must be at least 4 characters long.
+                        </div>
+                    </div>
                 </div>
+
+
+
                 <div class="form-group">
-                    <input type="email" class="name-email-input" id="exampleFormControlInput1" placeholder="Your email">
+                    <input type="email" id="email" name="email" class="name-email-input" required minlength="4"
+                        placeholder=" Your email" formControlName="email"/>
+                    <div *ngIf="email?.invalid && (email?.dirty || email?.touched || submitted)" class="alert">
+                        <div *ngIf="email?.errors?.['required']">Email is required.</div>
+                        <div *ngIf="email?.errors?.['minlength']">
+                            Email must be at least 4 characters long.
+                        </div>
+                        <div *ngIf="email?.errors?.['email']">
+                            Please enter a valid email.
+                        </div>
+                    </div>
                 </div>
+
+
+
                 <div class="form-group">
-                    <textarea class="form-textarea" id="exampleFormControlTextarea1" rows="3"
-                        placeholder="Your message"></textarea>
+                    <textarea class="form-textarea" id="exampleFormControlTextarea1" rows="3" name="message" required
+                        minlength="4" placeholder="Your message" formControlName="text"></textarea>
+                    <div *ngIf="text?.invalid && (text?.dirty || text?.touched || submitted)" class="alert">
+                        <div *ngIf="text?.errors?.['required']">Email is required.</div>
+                        <div *ngIf="text?.errors?.['minlength']">
+                            Message must be at least 4 characters long.
+                        </div>
+                    </div>
                 </div>
+
+
                 <div class="container-accept">
                     <div>
-                        <img [src]="checkboxImage[0]" alt="">
-                        <input style="display: none;" type="checkbox" name="accept" id="accept-checkbox">
+                        <img [src]="isChecked ? checkboxImage[1] : checkboxImage[0]" alt=""
+                            (click)="isChecked = !isChecked">
+                        <input style="display: none;" type="checkbox" name="accept" id="accept-checkbox"
+                         formControlName="accept">
                     </div>
-                    <label for="accept">I've read the <span>privacy policy</span> and agree to the processing of my data as outlined.</label>
+                    <label for="accept">I've read the <span>privacy policy</span> and agree to the processing of my data
+                        as outlined.</label>
+                    <div *ngIf="messageForm.controls['accept'].invalid && (messageForm.controls['accept'].dirty || messageForm.controls['accept'].touched || submitted)"
+                        class="alert">
+                        You must accept the terms.
+                    </div>
                 </div>
-    
-                <button type="submit" class="submit-button">{{ buttonText }}</button>
+
+                <button type="submit" class="submit-button" [class.submit-button-enabled]="messageForm.valid"
+                    [disabled]="!messageForm.valid">{{ buttonText }}</button>
+
             </form>
         </div>
     </div>

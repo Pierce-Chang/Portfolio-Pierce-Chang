@@ -3,7 +3,7 @@ $green: #70E61C;
 $purple: #9747FF;
 
 section {
-    padding-top: 100px;
+    padding-top: 110px;
     display: flex;
     flex-direction: column;
     margin: 0 100px;
@@ -58,21 +58,53 @@ section {
             }
 
             .name-email-input {
+                outline: none;
+                color: white;
                 width: 617px;
                 padding: 15px 25px;
                 border: 1px solid $purple;
                 background-color: transparent;
                 border-radius: 10px;
                 margin-bottom: 32px;
+                transition: all 100ms ease-in-out;
+
+                &::placeholder {
+                    color: white;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+
+                &:hover, &:focus {
+                    border: 1px solid #1CDAE6;
+                }
+
+                &:autofill, &:autofill:hover, &:autofill:focus, &:autofill:active, -webkit-autofill, -webkit-autofill:hover, -webkit-autofill:focus, -webkit-autofill:active {
+                    background-color: transparent;
+                    -webkit-text-fill-color: white;
+                    box-shadow: 0 0 0px 1000px transparent inset;
+                    transition: background-color 5000s ease-in-out 0s;
+                }
             }
 
             .form-textarea {
+                outline: none;
+                color: white;
                 width: 617px;
                 height: 202px;
                 padding: 15px 25px;
                 border: 1px solid $purple;
                 background-color: transparent;
                 border-radius: 10px;
+
+                &::placeholder {
+                    color: white;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+
+                &:hover, &:focus {
+                    border: 1px solid #1CDAE6;
+                }
             }
 
             .container-accept {
@@ -95,7 +127,7 @@ section {
                     width: 20px;
                 }
 
-            
+
             }
         }
     }
@@ -115,6 +147,11 @@ section {
     transition: all 100ms ease-in-out;
 }
 
+.submit-button-enabled {
+    background-color: $green !important;
+}
+
 .form-group {
     width: 100%;
+    color: white;
 }

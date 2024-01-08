@@ -7,7 +7,7 @@ $purple: #9747FF;
     display: flex;
     position: relative;
     justify-content: space-between;
-    padding-top: 110px;
+    padding-top: 220px;
 
     >img {
         position: absolute;
@@ -92,7 +92,8 @@ $purple: #9747FF;
     width: 100%;
     height: 90px;
 
-    button {
+    a {
+        text-decoration: none;
         background-color: $green;
         color: white;
         border: none;
@@ -102,7 +103,6 @@ $purple: #9747FF;
         font-size: 23px;
         font-weight: 400;
         font-family: 'Poppins', sans-serif !important;
-        cursor: pointer;
         transition: all 100ms ease-in-out;
 
         &:hover {

@@ -11,7 +11,7 @@ section {
 .container-whoami {
     display: flex;
     position: absolute;
-    top: 297px;
+    top: 247px;
     right: 100px;
     flex-direction: column;
     align-items: center;
@@ -92,20 +92,16 @@ section {
     position: absolute;
     object-fit: cover;
     width: 100%;
-    top: 377.6px;
+    top: 327.6px;
     left: 0;
     right: 0;
     z-index: 0;
 }
 
 .photo_shadows {
-    width: 690.7px;
-    height: 671.38px;
     position: absolute;
-    top: 0;
-    left: 12px;
-    right: 0;
-    margin-top: 221.62px;
+    top: 171.62px;
+    left: 0;
     z-index: 0;
 }
 
@@ -114,11 +110,13 @@ section {
     align-items: center;
     position: absolute;
     left: 0;
-    top: 0;
-    margin-top: 903px;
+    top: 853px;
     gap: 42px;
 
     a {
+        display: flex;
+        align-items: center;
+        height: 30px;
         font-size: 23px;
         font-weight: 400;
         color: white;
@@ -142,9 +140,8 @@ section {
     width: 23px;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 753px;
     margin-right: 100px;
-    margin-top: 733px;
     display: flex;
     justify-content: center;
     align-items: center;

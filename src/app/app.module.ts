@@ -11,8 +11,10 @@ import { MySkillsComponent } from './my-skills/my-skills.component';
 import { PortfolioHeadComponent } from './portfolio-head/portfolio-head.component';
 import { PortfolioProjectsComponent } from './portfolio-projects/portfolio-projects.component';
 import { ContactComponent } from './contact/contact.component';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     CommonModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
