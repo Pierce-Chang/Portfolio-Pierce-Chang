@@ -20,8 +20,8 @@ export class ContactComponent implements OnInit {
   
   ngOnInit(): void {
     this.messageForm = this.builder.group({
-      name: ['', [Validators.required, Validators.minLength(4)]],
-      email: ['', [Validators.required, Validators.minLength(4), Validators.email]],
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       text: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(500)]],
       accept: [this.isChecked, Validators.requiredTrue]
     });
@@ -31,7 +31,7 @@ export class ContactComponent implements OnInit {
     this.submitted = true;
     if (this.messageForm.valid) {
       console.log(this.messageForm.value);
-      // Your submission logic here
+      //TODO: set submission logic
   
       this.messageForm.reset();
     }

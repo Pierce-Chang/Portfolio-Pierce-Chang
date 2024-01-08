@@ -1,6 +1,7 @@
 $background-color: #141D2F;
 $green: #70E61C;
 $purple: #9747FF;
+$red: #E61C40;
 
 section {
     padding-top: 110px;
@@ -52,6 +53,7 @@ section {
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 32px;
 
             img {
                 margin-right: 12px;
@@ -65,7 +67,6 @@ section {
                 border: 1px solid $purple;
                 background-color: transparent;
                 border-radius: 10px;
-                margin-bottom: 32px;
                 transition: all 100ms ease-in-out;
 
                 &::placeholder {
@@ -74,11 +75,29 @@ section {
                     font-weight: 400;
                 }
 
-                &:hover, &:focus {
+                &:hover {
                     border: 1px solid #1CDAE6;
                 }
 
-                &:autofill, &:autofill:hover, &:autofill:focus, &:autofill:active, -webkit-autofill, -webkit-autofill:hover, -webkit-autofill:focus, -webkit-autofill:active {
+                &.ng-dirty.ng-invalid {
+                    border-color: $red;
+                    /* Rot, wenn bearbeitet und ungültig */
+                }
+
+                &.ng-valid.ng-touched,
+                &.ng-valid.ng-dirty {
+                    border-color: $green;
+                    /* Grün, wenn valid und bearbeitet */
+                }
+
+                &:autofill,
+                &:autofill:hover,
+                &:autofill:focus,
+                &:autofill:active,
+                -webkit-autofill,
+                -webkit-autofill:hover,
+                -webkit-autofill:focus,
+                -webkit-autofill:active {
                     background-color: transparent;
                     -webkit-text-fill-color: white;
                     box-shadow: 0 0 0px 1000px transparent inset;
@@ -102,8 +121,19 @@ section {
                     font-weight: 400;
                 }
 
-                &:hover, &:focus {
+                &:hover {
                     border: 1px solid #1CDAE6;
+                }
+
+                &.ng-dirty.ng-invalid {
+                    border-color: $red;
+                    /* Rot, wenn bearbeitet und ungültig */
+                }
+
+                &.ng-valid.ng-touched,
+                &.ng-valid.ng-dirty {
+                    border-color: $green;
+                    /* Grün, wenn valid und bearbeitet */
                 }
             }
 
@@ -154,4 +184,31 @@ section {
 .form-group {
     width: 100%;
     color: white;
+
+    .error-div {
+        position: relative;
+        top: 10px;
+        left: 0px;
+        color: $red;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.8px;
+    }
+    
+    .alert {
+        padding-bottom: 14px;
+    }
+
+    .alert-hidden {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.3s ease, max-height 0.3s ease;
+    }
+    
+    .alert-visible {
+        opacity: 1;
+        max-height: 50px; // oder die Höhe Ihrer Fehlermeldung
+        transition: opacity 0.3s ease, max-height 0.3s ease;
+    }
 }
