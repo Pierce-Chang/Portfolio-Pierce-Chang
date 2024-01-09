@@ -74,6 +74,7 @@ section {
         color: white;
         font-family: 'Poppins', sans-serif;
         cursor: pointer;
+        text-decoration: none;
 
         &:hover {
             background-color: $green;
@@ -87,6 +88,7 @@ section {
         background-color: $background-color;
         color: white;
         font-family: 'Poppins', sans-serif;
+        text-decoration: none;
         cursor: pointer;
 
         &:hover {

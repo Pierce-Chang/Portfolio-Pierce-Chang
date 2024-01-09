@@ -2,8 +2,8 @@
 
 ########### CONFIG ###############
 
-$recipient = 'pierce-chang@mailbox.de';
-$redirect = 'pierce-chang.de';
+$recipient = 'bolon96@gmx.de';
+$redirect = 'success.html';
 
 ########### CONFIG END ###########
 
@@ -40,7 +40,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         header("Access-Control-Allow-Origin: *");
 
         $subject = "Contact From " . $_POST['name'];
-        $headers = "From:  pierce-chang.de";
+        $headers = "From:  	pierce-chang.de";
 
         mail($recipient, $subject, $_POST['message'], $headers);
         header("Location: " . $redirect); 

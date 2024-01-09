@@ -4,8 +4,8 @@
         <p class="languages">{{ languages }}</p>
         <p>{{ description }}</p>
         <div class="container-buttons justify-end">
-            <button class="live-test">Live test</button>
-            <button class="github">Github</button>
+            <a [href]="liveTestLink" class="live-test">Live test</a>
+            <a [href]="gitHubLink" class="github">Github</a>
         </div>
     </div>
 
@@ -16,8 +16,8 @@
         <p class="languages">{{ languages }}</p>
         <p>{{ description }}</p>
         <div class="container-buttons flex-end">
-            <button class="live-test">Live test</button>
-            <button class="github">Github</button>
+            <a [href]="liveTestLink" class="live-test">Live test</a>
+            <a [href]="gitHubLink" class="github">Github</a>
         </div>
     </div>
 </section>
