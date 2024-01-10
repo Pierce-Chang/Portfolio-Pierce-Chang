@@ -11,6 +11,6 @@ export class PortfolioProjectsComponent {
   @Input() languages!: string;
   @Input() description!: string;
   @Input() isReversed: boolean = false; // Neuer Input für die Spiegelung
-  @Input() liveTestLink!: string;
-  @Input() gitHubLink!: string;
+  @Input() liveTestLink?: string;
+  @Input() gitHubLink?: string;
 }

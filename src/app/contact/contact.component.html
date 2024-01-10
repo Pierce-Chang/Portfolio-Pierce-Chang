@@ -11,11 +11,7 @@
         </div>
 
         <div class="container-form">
-            <form [formGroup]="messageForm" (Submit)="sendMail()"
-                action="http://pierce-chang.de/pierce-changde/send_mail.php" method="post">
-
-
-
+            <form [formGroup]="messageForm" (ngSubmit)="sendMail()">
                 <div class="form-group">
                     <input type="text" id="name" name="name" class="name-email-input" placeholder="Your name"
                         formControlName="name" />
@@ -24,7 +20,6 @@
                         <div class="error-div" *ngIf="name?.errors?.['required']">Your name is required</div>
                     </div>
                 </div>
-
 
                 <div class="form-group">
                     <input type="email" id="email" name="email" class="name-email-input" placeholder="Your email"
@@ -38,8 +33,6 @@
                     </div>
                 </div>
 
-
-
                 <div class="form-group">
                     <textarea class="form-textarea" id="exampleFormControlTextarea1" rows="3" name="message"
                         placeholder="Your message" formControlName="text"></textarea>
@@ -51,7 +44,6 @@
                         </div>
                     </div>
                 </div>
-
 
                 <div class="container-accept">
                     <div>
@@ -71,9 +63,17 @@
 
                 <button type="submit" class="submit-button" [class.submit-button-enabled]="messageForm.valid"
                     [disabled]="!messageForm.valid">{{ buttonText }}</button>
-
             </form>
         </div>
+        
+        <!-- Modal für Erfolgsmeldung -->
+        <div *ngIf="showSuccessModal" class="modal">
+            <div class="modal-content">
+                <span (click)="closeModal()" class="close">&times;</span>
+                <p>Ihre Nachricht wurde erfolgreich gesendet!</p>
+            </div>
+        </div>
+
     </div>
 
 </section>

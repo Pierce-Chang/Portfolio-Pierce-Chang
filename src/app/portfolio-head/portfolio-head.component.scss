@@ -51,9 +51,10 @@ section {
 }
 
 .purple-shadow3 {
-    position: relative;
-    top: 1000px;
-    left: -500px;
+    position: absolute;
+    top: 1200px;
+    left: 0px;
+    pointer-events: none;
 }
 
 .green-shadow3 {

@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -16,11 +17,13 @@ export class ContactComponent implements OnInit {
   buttonText = 'Send message :)';
   message = { name: '', email: '', text: '' };
   messageForm!: FormGroup;
+  showSuccessModal = false; // Modal-Status
 
   constructor(
     private builder: FormBuilder,
-    private http: HttpClient // Injizieren Sie HttpClient
-  ) {}
+    private http: HttpClient,
+    private cdr: ChangeDetectorRef
+  ) { }
 
   ngOnInit(): void {
     this.messageForm = this.builder.group({
@@ -32,28 +35,40 @@ export class ContactComponent implements OnInit {
   }
 
   sendMail() {
-    this.submitted = true;
     if (this.messageForm.valid) {
-      const url = 'https://pierce-chang.de/send_mail/send_mail.php'; // Vollständige URL
+      this.showSuccessModal = true; // Modal anzeigen
+      const url = 'https://pierce-chang.de/send_mail/send_mail.php';
       const formData: FormData = new FormData();
       formData.append('name', this.messageForm.value.name);
-      formData.append('message', this.messageForm.value.text); // Achten Sie auf das richtige Feld für die Nachricht
-  
-      this.http.post(url, formData).subscribe(
+      formData.append('email', this.messageForm.value.email); // E-Mail hinzufügen
+      formData.append('message', this.messageForm.value.text); // Nachricht
+
+      this.http.post(url, formData,{ responseType: 'text' })
+      .subscribe(
         response => {
           console.log('Success!', response);
-          // Fügen Sie hier Code ein, um auf erfolgreichen Versand zu reagieren
+          this.cdr.detectChanges(); // Änderungen erkennen
+          // Weitere Erfolgslogik
         },
         error => {
           console.error('Error!', error);
-          // Fügen Sie hier Code ein, um auf Fehler zu reagieren
+          this.sendNotificationEmail(this.messageForm.value.email);
+          this.showSuccessModal = false; // Im Fehlerfall Modal ausblenden
         }
       );
-  
+
       this.messageForm.reset();
+      this.submitted = false;
     }
   }
-  
+
+  sendNotificationEmail(email: string) {
+    // Logik zum Senden einer Benachrichtigungs-E-Mail
+  }
+
+  closeModal() {
+    this.showSuccessModal = false; // Modal schließen
+  }
 
   get name() {
     return this.messageForm.get('name');
