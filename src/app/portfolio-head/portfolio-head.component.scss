@@ -5,7 +5,7 @@ $purple: #9747FF;
 
 section {
     padding-top: 144px;
-    padding-bottom: 144px;
+    padding-bottom: 100px;
     position: relative;
     width: 100%;
     display: flex;
@@ -16,7 +16,7 @@ section {
 
     > p {
         color: white;
-        margin-bottom: 50px;
+        margin: 50px;
     }
 }
 
@@ -37,8 +37,6 @@ section {
     h2 {
         font-size: 90px;
         font-weight: 700;
-        margin-block-start: 0;
-        margin-block-end: 0;
         color: white;
     }
 
