@@ -1,18 +1,21 @@
 <header>
-<img src="/assets/img/pierce_logo.png" alt="">
+    <a href="https://www.pierce-chang.de"><img src="/assets/img/pierce_logo.png" alt=""></a>
 
-<nav>
-    <div>
-        <a id="tab1" href="#about-me" (click)="setActiveLink('tab1')" [class.active]="activeLink === 'tab1'">About me</a>
-        <div class="link-underline" [class.active]="activeLink === 'tab1'"></div>
-    </div>
-    <div>
-        <a id="tab2" href="#my-skills" (click)="setActiveLink('tab2')" [class.active]="activeLink === 'tab2'">Skills</a>
-        <div class="link-underline" [class.active]="activeLink === 'tab2'"></div>
-    </div>
-    <div>
-        <a id="tab3" href="#portfolio" (click)="setActiveLink('tab3')" [class.active]="activeLink === 'tab3'">Portfolio</a>
-        <div class="link-underline" [class.active]="activeLink === 'tab3'"></div>
-    </div>
-</nav>
+    <nav>
+        <div>
+            <a id="tab1" href="#about-me" (click)="setActiveLink('tab1')" [class.active]="activeLink === 'tab1'">About
+                me</a>
+            <div class="link-underline" [class.active]="activeLink === 'tab1'"></div>
+        </div>
+        <div>
+            <a id="tab2" href="#my-skills" (click)="setActiveLink('tab2')"
+                [class.active]="activeLink === 'tab2'">Skills</a>
+            <div class="link-underline" [class.active]="activeLink === 'tab2'"></div>
+        </div>
+        <div>
+            <a id="tab3" href="#portfolio" (click)="setActiveLink('tab3')"
+                [class.active]="activeLink === 'tab3'">Portfolio</a>
+            <div class="link-underline" [class.active]="activeLink === 'tab3'"></div>
+        </div>
+    </nav>
 </header>

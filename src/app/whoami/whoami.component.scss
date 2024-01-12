@@ -59,6 +59,12 @@ section {
             background-color: $purple;
             padding: 20px 40px;
         }
+
+        &:active {
+            color: black;
+            padding: 15px 30px;
+            background-color: #ffffff;
+        }
     }
 }
 
