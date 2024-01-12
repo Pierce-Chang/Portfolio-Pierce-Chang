@@ -97,7 +97,7 @@ section {
 .vector {
     position: absolute;
     object-fit: cover;
-    width: 100%;
+    min-width: 100%;
     top: 327.6px;
     left: 0;
     right: 0;
@@ -133,6 +133,11 @@ section {
         width: 30px;
         height: 30px;
         cursor: pointer;
+        transition: 100ms ease-in-out;
+
+        &:hover {
+            transform: scale(1.4);
+        }
     }
 
     .purple-line {

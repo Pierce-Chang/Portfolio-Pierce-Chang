@@ -35,6 +35,14 @@ $purple: #9747FF;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    img {
+        transition: all 0.1s ease-in-out;
+    };
+
+    img:hover {
+        transform: scale(1.2);
+    }
 }
 
 .container-profile {

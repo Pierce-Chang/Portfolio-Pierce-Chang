@@ -65,15 +65,20 @@
                     [disabled]="!messageForm.valid">{{ buttonText }}</button>
             </form>
         </div>
-        
-        <!-- Modal für Erfolgsmeldung -->
+
         <div *ngIf="showSuccessModal" class="modal">
             <div class="modal-content">
                 <span (click)="closeModal()" class="close">&times;</span>
                 <p>Ihre Nachricht wurde erfolgreich gesendet!</p>
             </div>
         </div>
-
     </div>
+
+    <a class="scroll-up" href="#">
+        <img src="{{currentScrollUpImage}}" 
+             alt="Scroll Up" 
+             (mouseover)="onMouseOver()" 
+             (mouseout)="onMouseOut()">
+      </a>
 
 </section>

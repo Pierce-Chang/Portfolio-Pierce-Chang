@@ -18,12 +18,29 @@ export class ContactComponent implements OnInit {
   message = { name: '', email: '', text: '' };
   messageForm!: FormGroup;
   showSuccessModal = false; // Modal-Status
+  // Pfad für das normale und das Hover-Bild
+  normalScrollUpImage = '/assets/img/go_up_button.png';
+  hoverScrollUpImage = '/assets/img/go_up_button_hover.png';
+
+  // Aktuell angezeigtes Bild
+  currentScrollUpImage: string;
 
   constructor(
     private builder: FormBuilder,
     private http: HttpClient,
     private cdr: ChangeDetectorRef
-  ) { }
+
+  ) {this.currentScrollUpImage = this.normalScrollUpImage;}
+
+  // Methode, um das Bild beim Hover zu ändern
+  onMouseOver(): void {
+    this.currentScrollUpImage = this.hoverScrollUpImage;
+  }
+
+  // Methode, um das Bild beim Verlassen des Hover-Zustands zurückzusetzen
+  onMouseOut(): void {
+    this.currentScrollUpImage = this.normalScrollUpImage;
+  }
 
   ngOnInit(): void {
     this.messageForm = this.builder.group({
@@ -43,19 +60,19 @@ export class ContactComponent implements OnInit {
       formData.append('email', this.messageForm.value.email); // E-Mail hinzufügen
       formData.append('message', this.messageForm.value.text); // Nachricht
 
-      this.http.post(url, formData,{ responseType: 'text' })
-      .subscribe(
-        response => {
-          console.log('Success!', response);
-          this.cdr.detectChanges(); // Änderungen erkennen
-          // Weitere Erfolgslogik
-        },
-        error => {
-          console.error('Error!', error);
-          this.sendNotificationEmail(this.messageForm.value.email);
-          this.showSuccessModal = false; // Im Fehlerfall Modal ausblenden
-        }
-      );
+      this.http.post(url, formData, { responseType: 'text' })
+        .subscribe(
+          response => {
+            console.log('Success!', response);
+            this.cdr.detectChanges(); // Änderungen erkennen
+            // Weitere Erfolgslogik
+          },
+          error => {
+            console.error('Error!', error);
+            this.sendNotificationEmail(this.messageForm.value.email);
+            this.showSuccessModal = false; // Im Fehlerfall Modal ausblenden
+          }
+        );
 
       this.messageForm.reset();
       this.submitted = false;
