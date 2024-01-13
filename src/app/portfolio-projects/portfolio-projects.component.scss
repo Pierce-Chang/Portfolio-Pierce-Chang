@@ -65,14 +65,18 @@ section {
     gap: 86px;
 
     .live-test {
+        text-wrap: nowrap;
+        font-weight: 400;
+        font-size: 23px;
         padding: 15px 30px;
         border-style: none;
         border-radius: 10px;
         background-color: $purple;
         color: white;
-        font-family: 'Poppins', sans-serif;
-        cursor: pointer;
+        font-family: 'Poppins', sans-serif !important;
         text-decoration: none;
+        cursor: pointer;
+
 
         &:hover {
             background-color: $green;
@@ -80,12 +84,14 @@ section {
     }
     
     .github {
+        font-weight: 400;
+        font-size: 23px;
         padding: 15px 30px;
         border: 1px solid $green;
         border-radius: 10px;
         background-color: $background-color;
         color: white;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Poppins', sans-serif !important;
         text-decoration: none;
         cursor: pointer;
 
