@@ -46,6 +46,8 @@ section {
 
 .codedby {
     color: white;
+    font-size: 23px;
+    font-weight: 400px;
 }
 
 .media-buttons {
@@ -55,4 +57,13 @@ section {
     align-items: center;
     width: 174px;
     height: 100%;
+
+    a {
+        cursor: pointer;
+        transition: 100ms ease-in-out;
+    
+        &:hover {
+            transform: scale(1.4);
+        }
+    }
 }
