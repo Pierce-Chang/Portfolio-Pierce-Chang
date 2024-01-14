@@ -14,6 +14,9 @@ import { ContactComponent } from './contact/contact.component';
 import { FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ImpressumComponent } from './impressum/impressum.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { HttpClientModule } from '@angular/common/http';
     PortfolioHeadComponent,
     PortfolioProjectsComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    ImpressumComponent,
+    PrivacyPolicyComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

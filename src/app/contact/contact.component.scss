@@ -157,7 +157,14 @@ section {
                     width: 20px;
                 }
 
+                img {
+                    cursor: pointer;
+                    border-radius: 100%;
 
+                    &:hover {
+                        background-color: #183771;
+                    }
+                }
             }
         }
     }
@@ -257,4 +264,25 @@ section {
     align-self: flex-end;
     padding-top: 90px;
     cursor: pointer;
+}
+
+.purple_shadow4 {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 4880px;
+    z-index: 0;
+}
+
+.policy-link {
+    color: $purple;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 100ms ease-in-out;
+
+    &:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 0.5px;
+    }
 }

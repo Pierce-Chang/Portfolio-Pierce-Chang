@@ -53,7 +53,7 @@
                         <input style="display: none;" type="checkbox" name="accept" id="accept-checkbox"
                             formControlName="accept">
                     </div>
-                    <label for="accept">I've read the <span>privacy policy</span> and agree to the processing of my data
+                    <label for="accept">I've read the <a class="policy-link" href="/privacy-policy">privacy policy</a> and agree to the processing of my data
                         as outlined.</label>
                     <div *ngIf="messageForm.controls['accept'].invalid && (messageForm.controls['accept'].dirty || messageForm.controls['accept'].touched || submitted)"
                         class="alert">
@@ -81,4 +81,5 @@
              (mouseout)="onMouseOut()">
       </a>
 
+      <img class="purple_shadow4" src="/assets/img/purple_shadow4.png" alt="">
 </section>
