@@ -51,6 +51,14 @@ export class ContactComponent implements OnInit {
     });
   }
 
+  checkFormAndSubmit() {
+    this.submitted = true; // Markiert das Formular als "versucht zu senden"
+  
+    if (this.messageForm.valid) {
+      this.sendMail();
+    }
+  }
+
   sendMail() {
     if (this.messageForm.valid) {
       this.showSuccessModal = true; // Modal anzeigen

@@ -164,7 +164,10 @@ section {
             }
 
             .container-accept {
+                height: 56px;
                 display: flex;
+                flex-direction: column;
+                gap: 10px;
 
                 label {
                     color: white;
@@ -202,7 +205,6 @@ section {
     border: none;
     border-radius: 10px;
     padding: 15px 30px;
-    margin-top: 34px;
     font-size: 23px;
     font-weight: 400;
     font-family: "Poppins", sans-serif;
@@ -311,4 +313,16 @@ section {
         text-decoration: underline;
         text-decoration-thickness: 0.5px;
     }
+}
+
+.error-accept {
+    color: $red;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.div-accept {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

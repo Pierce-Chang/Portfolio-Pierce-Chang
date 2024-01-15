@@ -14,7 +14,7 @@
             <form [formGroup]="messageForm" (ngSubmit)="sendMail()">
 
                 <div class="form-group">
-                    <input type="text" id="name" name="name" class="name-email-input"
+                    <input autocomplete="name" type="text" id="name" name="name" class="name-email-input"
                         [ngClass]="{'valid-symbol': name?.valid && name?.dirty, 'unvalid-symbol': name?.invalid && name?.dirty}"
                         placeholder="Your name" formControlName="name" />
                     <div [class.alert-hidden]="!name?.invalid || !name?.dirty"
@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="email" id="email" name="email" class="name-email-input"
+                    <input autocomplete="email" type="email" id="email" name="email" class="name-email-input"
                         [ngClass]="{'valid-symbol': email?.valid && email?.dirty, 'unvalid-symbol': email?.invalid && email?.dirty}"
                         placeholder="Your email" formControlName="email" />
                     <div [class.alert-hidden]="!email?.invalid || !email?.dirty"
@@ -55,24 +55,27 @@
 
 
                 <div class="container-accept">
-                    <div>
-                        <img [src]="messageForm.controls['accept'].value ? checkboxImage[1] : checkboxImage[0]"
-                            alt="checkbox"
-                            (click)="messageForm.controls['accept'].setValue(!messageForm.controls['accept'].value)">
-                        <input style="display: none;" type="checkbox" name="accept" id="accept-checkbox"
-                            formControlName="accept">
+                    <div class="div-accept">
+                        <div style="height: 25px;">
+                            <img [src]="messageForm.controls['accept'].value ? checkboxImage[1] : checkboxImage[0]"
+                                alt="checkbox"
+                                (click)="messageForm.controls['accept'].setValue(!messageForm.controls['accept'].value)">
+                            <input style="display: none;" type="checkbox" name="accept" id="accept"
+                                formControlName="accept">
+                        </div>
+                        <label for="accept">I've read the <a class="policy-link" href="/privacy-policy">privacy
+                                policy</a>
+                            and agree to the processing of my data
+                            as outlined.</label>
                     </div>
-                    <label for="accept">I've read the <a class="policy-link" href="/privacy-policy">privacy policy</a>
-                        and agree to the processing of my data
-                        as outlined.</label>
                     <div *ngIf="messageForm.controls['accept'].invalid && (messageForm.controls['accept'].dirty || messageForm.controls['accept'].touched || submitted)"
-                        class="alert">
-                        You must accept the terms.
+                        class="error-accept">
+                        <div>Please accept the privacy policy.</div>
                     </div>
                 </div>
 
-                <button type="submit" class="submit-button" [class.submit-button-enabled]="messageForm.valid"
-                    [disabled]="!messageForm.valid">{{ buttonText }}</button>
+                <button type="button" class="submit-button" [class.submit-button-enabled]="messageForm.valid"
+                    (click)="checkFormAndSubmit()">{{ buttonText }}</button>
             </form>
         </div>
 
