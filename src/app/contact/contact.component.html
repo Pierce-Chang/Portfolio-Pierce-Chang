@@ -12,18 +12,24 @@
 
         <div class="container-form">
             <form [formGroup]="messageForm" (ngSubmit)="sendMail()">
+
                 <div class="form-group">
-                    <input type="text" id="name" name="name" class="name-email-input" placeholder="Your name"
-                        formControlName="name" />
+                    <input type="text" id="name" name="name" class="name-email-input"
+                        [ngClass]="{'valid-symbol': name?.valid && name?.dirty, 'unvalid-symbol': name?.invalid && name?.dirty}"
+                        placeholder="Your name" formControlName="name" />
                     <div [class.alert-hidden]="!name?.invalid || !name?.dirty"
                         [class.alert-visible]="name?.invalid && name?.dirty" class="alert">
                         <div class="error-div" *ngIf="name?.errors?.['required']">Your name is required</div>
+                        <div class="error-div" *ngIf="name?.errors?.['minlength']">
+                            Name must be at least 4 characters long.
+                        </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <input type="email" id="email" name="email" class="name-email-input" placeholder="Your email"
-                        formControlName="email" />
+                    <input type="email" id="email" name="email" class="name-email-input"
+                        [ngClass]="{'valid-symbol': email?.valid && email?.dirty, 'unvalid-symbol': email?.invalid && email?.dirty}"
+                        placeholder="Your email" formControlName="email" />
                     <div [class.alert-hidden]="!email?.invalid || !email?.dirty"
                         [class.alert-visible]="email?.invalid && email?.dirty" class="alert">
                         <div class="error-div" *ngIf="email?.errors?.['required']">Your Email is required</div>
@@ -34,8 +40,10 @@
                 </div>
 
                 <div class="form-group">
-                    <textarea class="form-textarea" id="exampleFormControlTextarea1" rows="3" name="message"
-                        placeholder="Your message" formControlName="text"></textarea>
+                    <textarea class="form-textarea"
+                        [ngClass]="{'textarea-valid-symbol': text?.valid && text?.dirty, 'textarea-unvalid-symbol': text?.invalid && text?.dirty}"
+                        id="exampleFormControlTextarea1" rows="3" name="message" placeholder="Your message"
+                        formControlName="text"></textarea>
                     <div [class.alert-hidden]="!text?.invalid || !text?.dirty"
                         [class.alert-visible]="text?.invalid && text?.dirty" class="alert">
                         <div class="error-div" *ngIf="text?.errors?.['required']">Your message is empty</div>
@@ -45,6 +53,7 @@
                     </div>
                 </div>
 
+
                 <div class="container-accept">
                     <div>
                         <img [src]="messageForm.controls['accept'].value ? checkboxImage[1] : checkboxImage[0]"
@@ -53,7 +62,8 @@
                         <input style="display: none;" type="checkbox" name="accept" id="accept-checkbox"
                             formControlName="accept">
                     </div>
-                    <label for="accept">I've read the <a class="policy-link" href="/privacy-policy">privacy policy</a> and agree to the processing of my data
+                    <label for="accept">I've read the <a class="policy-link" href="/privacy-policy">privacy policy</a>
+                        and agree to the processing of my data
                         as outlined.</label>
                     <div *ngIf="messageForm.controls['accept'].invalid && (messageForm.controls['accept'].dirty || messageForm.controls['accept'].touched || submitted)"
                         class="alert">
@@ -75,11 +85,8 @@
     </div>
 
     <a class="scroll-up" href="#">
-        <img src="{{currentScrollUpImage}}" 
-             alt="Scroll Up" 
-             (mouseover)="onMouseOver()" 
-             (mouseout)="onMouseOut()">
-      </a>
+        <img src="{{currentScrollUpImage}}" alt="Scroll Up" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
+    </a>
 
-      <img class="purple_shadow4" src="/assets/img/purple_shadow4.png" alt="">
+    <img class="purple_shadow4" src="/assets/img/purple_shadow4.png" alt="">
 </section>

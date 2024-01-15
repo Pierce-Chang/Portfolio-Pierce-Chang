@@ -44,7 +44,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.messageForm = this.builder.group({
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required, Validators.minLength(4) , Validators.maxLength(30)]],
       email: ['', [Validators.required, Validators.email]],
       text: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(500)]],
       accept: [this.isChecked, Validators.requiredTrue]

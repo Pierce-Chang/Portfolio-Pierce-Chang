@@ -67,7 +67,7 @@ section {
                 border: 1px solid $purple;
                 background-color: transparent;
                 border-radius: 10px;
-                transition: all 100ms ease-in-out;
+                transition: color 0.3s ease, border 0.3s ease;
 
                 &::placeholder {
                     color: white;
@@ -105,6 +105,34 @@ section {
                 }
             }
 
+            .valid-symbol {
+                background-image: url('/assets/img/valid.png');
+                background-repeat: no-repeat;
+                background-position: calc(100% - 24px) center;
+                background-size: 25px 25px;
+            }
+
+            .unvalid-symbol {
+                background-image: url('/assets/img/unvalid.png');
+                background-repeat: no-repeat;
+                background-position: calc(100% - 24px) center;
+                background-size: 25px 25px;
+            }
+
+            .textarea-valid-symbol, .textarea-unvalid-symbol {
+                background-repeat: no-repeat;
+                background-position: right 25px top 10px; /* Position oben rechts mit etwas Abstand */
+                background-size: 25px 25px; /* Passen Sie die Größe nach Bedarf an */
+            }
+            
+            .textarea-valid-symbol {
+                background-image: url('/assets/img/valid.png');
+            }
+            
+            .textarea-unvalid-symbol {
+                background-image: url('/assets/img/unvalid.png');
+            }
+
             .form-textarea {
                 outline: none;
                 color: white;
@@ -127,13 +155,11 @@ section {
 
                 &.ng-dirty.ng-invalid {
                     border-color: $red;
-                    /* Rot, wenn bearbeitet und ungültig */
                 }
 
                 &.ng-valid.ng-touched,
                 &.ng-valid.ng-dirty {
                     border-color: $green;
-                    /* Grün, wenn valid und bearbeitet */
                 }
             }
 
