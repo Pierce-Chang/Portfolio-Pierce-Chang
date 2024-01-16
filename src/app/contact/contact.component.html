@@ -1,7 +1,9 @@
-<section>
-
+<div class="h2-container">
+    <div class="short-line-p"></div>
     <h2>Contact</h2>
+</div>
 
+<section>
     <div class="container-text-form">
         <div class="container-contact-me">
             <h3>Got a problem to solve?</h3>
@@ -74,8 +76,11 @@
                     </div>
                 </div>
 
-                <button type="button" class="submit-button" [class.submit-button-enabled]="messageForm.valid"
+                <div class="button-container">
+                    <button type="button" class="submit-button" [class.submit-button-enabled]="messageForm.valid"
                     (click)="checkFormAndSubmit()">{{ buttonText }}</button>
+                </div>
+           
             </form>
         </div>
 

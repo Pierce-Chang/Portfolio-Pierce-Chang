@@ -4,17 +4,9 @@ $purple: #9747FF;
 $red: #E61C40;
 
 section {
-    padding-top: 150px;
     display: flex;
     flex-direction: column;
     margin: 0 100px;
-
-    h2 {
-        color: white;
-        font-size: 90px;
-        font-weight: 700;
-        height: 130px;
-    }
 
     .container-text-form {
         display: flex;
@@ -67,7 +59,7 @@ section {
                 border: 1px solid $purple;
                 background-color: transparent;
                 border-radius: 10px;
-                transition: color 0.3s ease, border 0.3s ease;
+                transition: color 75ms ease, border 75ms ease;
 
                 &::placeholder {
                     color: white;
@@ -119,16 +111,19 @@ section {
                 background-size: 25px 25px;
             }
 
-            .textarea-valid-symbol, .textarea-unvalid-symbol {
+            .textarea-valid-symbol,
+            .textarea-unvalid-symbol {
                 background-repeat: no-repeat;
-                background-position: right 25px top 10px; /* Position oben rechts mit etwas Abstand */
-                background-size: 25px 25px; /* Passen Sie die Größe nach Bedarf an */
+                background-position: right 25px top 10px;
+                /* Position oben rechts mit etwas Abstand */
+                background-size: 25px 25px;
+                /* Passen Sie die Größe nach Bedarf an */
             }
-            
+
             .textarea-valid-symbol {
                 background-image: url('/assets/img/valid.png');
             }
-            
+
             .textarea-unvalid-symbol {
                 background-image: url('/assets/img/unvalid.png');
             }
@@ -164,10 +159,12 @@ section {
             }
 
             .container-accept {
+                width: 100%;
                 height: 56px;
                 display: flex;
                 flex-direction: column;
-                gap: 10px;
+                gap: 6px;
+                margin-top: -40px;
 
                 label {
                     color: white;
@@ -199,21 +196,35 @@ section {
     }
 }
 
-.submit-button {
-    background-color: #B6B6B6;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 15px 30px;
-    font-size: 23px;
-    font-weight: 400;
-    font-family: "Poppins", sans-serif;
-    transition: all 100ms ease-in-out;
-}
+.button-container {
+    height: 74px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.submit-button-enabled {
-    background-color: $green ;
-    cursor: pointer;
+    .submit-button {
+        background-color: #B6B6B6;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 15px 30px;
+        font-size: 23px;
+        font-weight: 400;
+        font-family: "Poppins", sans-serif;
+        transition: all 75ms ease-in-out;
+        margin-top: -20px;
+    }
+
+    .submit-button-enabled {
+        background-color: $green ;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $purple;
+            padding: 20px 40px;
+        }
+    }
 }
 
 .form-group {
@@ -290,7 +301,7 @@ section {
 
 .scroll-up {
     align-self: flex-end;
-    padding-top: 90px;
+    padding-top: 50px;
     cursor: pointer;
 }
 
@@ -307,7 +318,7 @@ section {
     font-size: 14px;
     font-weight: 400;
     text-decoration: none;
-    transition: all 100ms ease-in-out;
+    transition: all 75ms ease-in-out;
 
     &:hover {
         text-decoration: underline;
@@ -323,6 +334,29 @@ section {
 
 .div-accept {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+}
+
+.h2-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center; // Zentriert die Elemente vertikal
+    justify-content: start;
+    padding-top: 105px;
+    padding-bottom: 20px;
+
+    h2 {
+        color: white;
+        font-size: 90px;
+        font-weight: 700;
+    }
+
+    .short-line-p {
+        width: 50px;
+        height: 4px; // oder eine gewünschte Höhe für die Linie
+        background-color: $purple;
+        margin-right: 50px;
+    }
 }

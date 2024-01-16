@@ -6,7 +6,7 @@ $purple: #9747FF;
     position: relative;
     display: flex;
     justify-content: space-between;
-    padding-top: 200px;
+    padding-top: 140px;
     margin-bottom: -200px;
     margin-top: -60px;
     padding-bottom: 200px;
@@ -19,7 +19,8 @@ $purple: #9747FF;
             color: white;
             font-size: 90px;
             font-weight: 700;
-            padding-bottom: 23px;
+            padding-bottom: 30px;
+            line-height: 71px;
         }
 
         p {
@@ -38,7 +39,7 @@ $purple: #9747FF;
     justify-content: center;
 
     img {
-        transition: all 0.1s ease-in-out;
+        transition: all 75ms ease-in-out;
     };
 
     img:hover {

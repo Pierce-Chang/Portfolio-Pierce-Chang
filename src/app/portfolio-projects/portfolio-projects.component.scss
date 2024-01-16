@@ -73,7 +73,7 @@ section {
         font-family: 'Poppins', sans-serif !important;
         text-decoration: none;
         cursor: pointer;
-        transition: all 0.1s ease-in-out;
+        transition: all 75ms ease-in-out;
 
 
         &:hover {
@@ -92,7 +92,7 @@ section {
         font-family: 'Poppins', sans-serif !important;
         text-decoration: none;
         cursor: pointer;
-        transition: all 0.075s ease-in-out;
+        transition: all 75ms ease-in-out;
 
         &:hover {
             background-color: $green;

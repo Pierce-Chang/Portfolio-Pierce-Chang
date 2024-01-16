@@ -32,7 +32,7 @@ header {
     nav a {
         color: white;
         text-decoration: none;
-        transition: all 200ms ease-in-out;
+        transition: all 75ms ease-in-out;
         font-size: 23px;
         font-weight: 400;
 
@@ -44,7 +44,7 @@ header {
             width: 55px;
             border-bottom: 3px solid $purple;
             padding-bottom: 4px;
-            transition: all 200ms ease-in-out;
+            transition: all 75ms ease-in-out;
         }
     }
 }
