@@ -16,18 +16,39 @@ html {
   font: unset;
 }
 
-.mat-h2, .mat-headline-6, .mat-typography .mat-h2, .mat-typography .mat-headline-6, .mat-typography h2 {
+.mat-h2,
+.mat-headline-6,
+.mat-typography .mat-h2,
+.mat-typography .mat-headline-6,
+.mat-typography h2 {
   font: unset;
   font-family: 'Poppins', sans-serif;
   letter-spacing: .0125em;
   margin: 0 0 16px;
 }
 
-.mat-h3, .mat-subtitle-1, .mat-typography .mat-h3, .mat-typography .mat-subtitle-1, .mat-typography h3 {
+.mat-h3,
+.mat-subtitle-1,
+.mat-typography .mat-h3,
+.mat-typography .mat-subtitle-1,
+.mat-typography h3 {
   font: unset;
   font-family: 'Poppins', sans-serif;
   letter-spacing: .009375em;
   margin: 0 0 16px;
+}
+
+@media (max-width: 450px) {
+
+  body {
+    overflow: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* poppins-100 - latin */

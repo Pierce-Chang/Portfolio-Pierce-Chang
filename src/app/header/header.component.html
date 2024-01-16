@@ -15,7 +15,18 @@
         <div>
             <a id="tab3" href="#portfolio" (click)="setActiveLink('tab3')"
                 [class.active]="activeLink === 'tab3'">Portfolio</a>
-            <div class="link-underline" [class.active]="activeLink === 'tab3'"></div>
+            <div class="link-underline" [class.active]="activeLink === 'tab3'"></div>   
         </div>
+
+
+
+        <div class="burger-menu" *ngIf="isMenuOpen">
+            <div class="menu-content">
+                <a id="tab1" href="#about-me" (click)="setActiveLink('tab1')">About me</a>
+                <a id="tab2" href="#my-skills" (click)="setActiveLink('tab2')">Skills</a>
+                <a id="tab3" href="#portfolio" (click)="setActiveLink('tab3')">Portfolio</a>
+            </div>
+        </div>
+        <button class="burger-button" (click)="toggleMenu()"></button>
     </nav>
 </header>
