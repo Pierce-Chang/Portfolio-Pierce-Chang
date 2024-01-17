@@ -2,31 +2,34 @@
     <a href="https://www.pierce-chang.de"><img src="/assets/img/pierce_logo.png" alt=""></a>
 
     <nav>
-        <div>
-            <a id="tab1" href="#about-me" (click)="setActiveLink('tab1')" [class.active]="activeLink === 'tab1'">About
-                me</a>
-            <div class="link-underline" [class.active]="activeLink === 'tab1'"></div>
-        </div>
-        <div>
-            <a id="tab2" href="#my-skills" (click)="setActiveLink('tab2')"
-                [class.active]="activeLink === 'tab2'">Skills</a>
-            <div class="link-underline" [class.active]="activeLink === 'tab2'"></div>
-        </div>
-        <div>
-            <a id="tab3" href="#portfolio" (click)="setActiveLink('tab3')"
-                [class.active]="activeLink === 'tab3'">Portfolio</a>
-            <div class="link-underline" [class.active]="activeLink === 'tab3'"></div>   
+        <div class="nav-container">
+            <div>
+                <a id="tab1" href="#about-me" (click)="setActiveLink('tab1')"
+                    [class.active]="activeLink === 'tab1'">About
+                    me</a>
+                <div class="link-underline" [class.active]="activeLink === 'tab1'"></div>
+            </div>
+            <div>
+                <a id="tab2" href="#my-skills" (click)="setActiveLink('tab2')"
+                    [class.active]="activeLink === 'tab2'">Skills</a>
+                <div class="link-underline" [class.active]="activeLink === 'tab2'"></div>
+            </div>
+            <div>
+                <a id="tab3" href="#portfolio" (click)="setActiveLink('tab3')"
+                    [class.active]="activeLink === 'tab3'">Portfolio</a>
+                <div class="link-underline" [class.active]="activeLink === 'tab3'"></div>
+            </div>
         </div>
 
 
 
-        <div class="burger-menu" *ngIf="isMenuOpen">
+        <div (click)="toggleMenu()" class="burger-menu" *ngIf="isMenuOpen">
             <div class="menu-content">
                 <a id="tab1" href="#about-me" (click)="setActiveLink('tab1')">About me</a>
                 <a id="tab2" href="#my-skills" (click)="setActiveLink('tab2')">Skills</a>
                 <a id="tab3" href="#portfolio" (click)="setActiveLink('tab3')">Portfolio</a>
             </div>
         </div>
-        <button class="burger-button" (click)="toggleMenu()"></button>
+        <button class="burger-button" (click)="toggleMenu()"><img src="/assets/img/burger_menu.png" alt=""></button>
     </nav>
 </header>
