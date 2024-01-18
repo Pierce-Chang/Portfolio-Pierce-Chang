@@ -93,6 +93,7 @@ section {
 
 .pierce_profile {
     position: relative;
+    left: 150px;
     height: 900px;
 }
 
@@ -173,5 +174,79 @@ section {
     img {
         width: 30px;
         height: 30px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .pierce_profile {
+        height: 600px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .name-frontend-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .name {
+            height: 55px;
+            font-size: 45px;
+        }
+
+        .frontend {
+            font-size: 29px;
+        }
+    }
+
+    .container-whoami {
+        top: 579px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+
+
+        .whoami {
+            height: 86px;
+        }
+
+        .iam {
+            width: 32px;
+            padding-bottom: 6px;
+            
+            span {
+            font-size: 32px;
+            padding-right: 4px;
+            }
+        }
+
+        a {
+            margin-top: 40px;
+            font-size: 16px;
+        }
+    }
+
+    .vector {
+        object-fit: cover;
+        width: 500px;
+        min-width: 100%;
+        top: 400px;
+        left: 0;
+        right: 0;
+        z-index: 0;
+    }
+
+    .media-line {
+        top: 800px;
+
+        .email-media {
+            display: none;
+        }
+    }
+
+    .scroll-down-container {
+        display: none;
     }
 }

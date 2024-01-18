@@ -19,10 +19,6 @@ header {
         width: 150px;
     }
 
-    h2 {
-        color: white;
-    }
-
     nav {
         display: flex;
         align-items: center;
@@ -46,11 +42,6 @@ header {
             padding-bottom: 4px;
             transition: all 75ms ease-in-out;
         }
-    }
-
-    .burger_icon {
-        display: none;
-        width: 30px;
     }
 }
 
@@ -116,11 +107,5 @@ header {
 
     header {
         padding: 0 25px;
-    }
-
-    .burger_icon {
-        display: block !important;
-        width: 30px;
-        cursor: pointer;
     }
 }
