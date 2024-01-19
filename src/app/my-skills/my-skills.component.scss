@@ -3,21 +3,28 @@ $green: #70E61C;
 $purple: #9747FF;
 
 @keyframes bounce {
-	0%, 100%, 20%, 50%, 80% {
-		-webkit-transform: translateY(0);
-		-ms-transform:     translateY(0);
-		transform:         translateY(0)
-	}
-	40% {
-		-webkit-transform: translateY(-30px);
-		-ms-transform:     translateY(-30px);
-		transform:         translateY(-30px)
-	}
-	60% {
-		-webkit-transform: translateY(-15px);
-		-ms-transform:     translateY(-15px);
-		transform:         translateY(-15px)
-	}
+
+    0%,
+    100%,
+    20%,
+    50%,
+    80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    40% {
+        -webkit-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        transform: translateY(-30px)
+    }
+
+    60% {
+        -webkit-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        transform: translateY(-15px)
+    }
 }
 
 
@@ -143,6 +150,94 @@ $purple: #9747FF;
             color: black;
             padding: 15px 30px;
             background-color: #ffffff;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .container-skills {
+        flex-direction: column-reverse;
+    }
+
+
+    .get-in-touch {
+        display: none;
+    }
+
+    .my-skills-p {
+        width: 100% !important;
+
+        h2 {
+            font-size: 45px !important;
+        }
+
+        p {
+            width: 80%;
+            padding-top: 0 !important;
+            margin-right: 25px !important;
+        }
+    }
+
+    .my-skills-line {
+        width: 20px;
+        margin-left: 6px;
+    }
+
+    .my-skills-header {
+        padding-bottom: 20px;
+
+        h2 {
+            margin: 0 0 0px;
+        }
+    }
+
+
+
+
+
+
+
+
+
+    .skill-icons {
+        padding-top: 50px;
+        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-rows: repeat(4, 1fr) !important;
+        gap: 56px 32px !important;
+        margin: 0 25px !important;
+
+        img {
+            height: 45px !important;
+            padding-bottom: 10px;
+        }
+
+        .icon-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            -webkit-animation-duration: 800ms;
+            animation-duration: 800ms;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+
+            &:hover {
+                animation-name: bounce;
+                -moz-animation-name: bounce;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 400;
+                margin-block-start: 0;
+                margin-block-end: 0;
+                color: white;
+                text-align: center;
+            }
         }
     }
 }

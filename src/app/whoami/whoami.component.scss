@@ -93,8 +93,9 @@ section {
 
 .pierce_profile {
     position: relative;
-    left: 150px;
+    left: 100px;
     height: 900px;
+    transform: scaleX(-1);
 }
 
 .vector {
