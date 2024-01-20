@@ -183,7 +183,7 @@ section {
     .pierce_profile {
         height: 600px;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) scaleX(-1);
     }
 
     .name-frontend-container {
