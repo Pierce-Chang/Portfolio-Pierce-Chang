@@ -154,9 +154,17 @@ $purple: #9747FF;
     }
 }
 
+.spacer-grid {
+    display: none !important;
+}
+
 @media (max-width: 450px) {
     .container-skills {
         flex-direction: column-reverse;
+    }
+
+    .spacer-grid {
+        display: unset !important;
     }
 
 

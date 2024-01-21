@@ -72,13 +72,7 @@ section {
 }
 
 @media (max-width: 450px) {
-    .portfolio-head-container {
-        position: relative;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    
+    .portfolio-head-container { 
         .short-line-p {
             width: 20px;
             margin-right: 4px;
@@ -125,4 +119,21 @@ section {
             text-align: center;
         }
     }
+
+    .purple-shadow3 {
+        height: 342px;
+        position: absolute;
+        top: 1300px;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+    }
+    
+    .green-shadow3 {
+        height: 429px;
+        position: absolute;
+        top: 1900px;
+        right: 0;
+    }
+    
 }

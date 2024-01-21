@@ -60,6 +60,7 @@ section {
                 background-color: transparent;
                 border-radius: 10px;
                 transition: color 75ms ease, border 75ms ease;
+                font-family: 'Poppins', sans-serif !important;
 
                 &::placeholder {
                     color: white;
@@ -137,6 +138,7 @@ section {
                 border: 1px solid $purple;
                 background-color: transparent;
                 border-radius: 10px;
+                font-family: 'Poppins', sans-serif !important;
 
                 &::placeholder {
                     color: white;
@@ -336,13 +338,17 @@ section {
     display: flex;
     justify-content: start;
     align-items: center;
+
+    label {
+        line-height: 16.8px;
+    }
 }
 
 .h2-container {
     position: relative;
     width: 100%;
     display: flex;
-    align-items: center; // Zentriert die Elemente vertikal
+    align-items: center;
     justify-content: start;
     padding-top: 105px;
     padding-bottom: 20px;
@@ -355,8 +361,71 @@ section {
 
     .short-line-p {
         width: 50px;
-        height: 4px; // oder eine gewünschte Höhe für die Linie
+        height: 4px;
         background-color: $purple;
         margin-right: 50px;
+    }
+}
+
+@media (max-width: 450px) {
+    section {
+        margin: 0 25px;
+
+        .container-text-form {
+            flex-direction: column;
+            gap: 32px;
+
+            form {
+                width: 100%;
+                gap: 24px;
+
+                .name-email-input {
+                    width: calc(100% - 50px);
+                }
+
+                .form-textarea {
+                    width: calc(100% - 50px);
+                }
+
+                .container-accept {
+                    width: calc(100% - 50px);
+                }
+            }
+        }
+    }
+
+    .button-container {
+        .submit-button {
+            font-size: 16px;
+        }
+    }
+
+    .h2-container {
+        padding-bottom: 0px;
+        margin-bottom: 20px;
+
+        h2 {
+            font-size: 45px;
+            margin: 0;
+        }
+
+        .short-line-p {
+            width: 20px;
+            margin-right: 5px;
+        }
+    }
+
+    .purple_shadow4 {
+        height: 400px;
+        left: -100px;
+        top: 5100px;
+    }
+
+    .div-accept {
+        margin-top: 12px;
+    }
+
+    .scroll-up {
+        padding-top: 8px;
     }
 }
