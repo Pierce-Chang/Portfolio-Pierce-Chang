@@ -17,9 +17,6 @@ section {
         position: relative;
         z-index: 1;
     }
-    .reversed-section {
-        flex-direction: row-reverse; // Spiegelt die Anordnung
-    }
 
     .align-end {
         align-items: flex-end;
@@ -54,6 +51,10 @@ section {
      }
 }
 
+.reversed-section {
+    flex-direction: row-reverse !important; // Spiegelt die Anordnung
+}
+
 .container-buttons {
     display: flex;
     align-items: center;
@@ -74,7 +75,6 @@ section {
         text-decoration: none;
         cursor: pointer;
         transition: all 75ms ease-in-out;
-
 
         &:hover {
             background-color: $green;
@@ -100,3 +100,65 @@ section {
     }
 }
 
+@media (max-width: 450px) {
+    section {
+        flex-direction: column;
+        gap: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+
+        img {
+            padding: 0;
+            width: 300px;
+        }
+
+        .align-end {
+            align-items: center;
+        }
+
+        .justify-end {
+            justify-content: center;
+        }
+
+        .project-infos {
+            width: 100%;
+            padding: 0 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+
+            h3 {
+                font-size: 28px;
+            }
+
+            .languages {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .reversed-section {
+        flex-direction: column !important;
+       }
+
+    .container-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: max-content;
+        gap: 50px;
+
+        .live-test {
+            text-align: center;
+        }
+
+        .github {
+            text-align: center;
+        }
+    }
+}

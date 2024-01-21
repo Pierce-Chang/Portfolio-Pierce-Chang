@@ -24,7 +24,7 @@ section {
     width: 100%;
     display: flex;
     align-items: center; // Zentriert die Elemente vertikal
-    justify-content: end; // Zentriert den Inhalt horizontal
+    justify-content: center; // Zentriert den Inhalt horizontal
 
     .short-line-p {
         width: 109px;
@@ -40,7 +40,7 @@ section {
     }
 
     .long-line-p {
-        width: 484px;
+        width: 100%;
         height: 4px; // oder eine gewünschte Höhe für die Linie
         background-color: $purple;
         margin-left: 20px; // Abstand zwischen dem Text und der Linie
@@ -58,4 +58,71 @@ section {
     position: absolute;
     top: 1250px;
     right: 0;
+}
+
+.short-witdh {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.long-width {
+    width: 100%;
+}
+
+@media (max-width: 450px) {
+    .portfolio-head-container {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        .short-line-p {
+            width: 20px;
+            margin-right: 4px;
+        }
+    
+        h2 {
+            font-size: 45px;
+            margin-block-start: 0.0em;
+            margin-block-end: 0.0em;
+        }
+    
+        .long-line-p {
+            width: 100%;
+            margin-left: 4px;
+        }
+    }
+
+    .short-witdh {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+    }
+
+    .long-width {
+        width: 100%;
+    }
+
+    section {
+        padding-top: 120px;
+        padding-bottom: 140px;
+        position: relative;
+        top: 130px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1;
+    
+        > p {
+            color: white;
+            margin: 0 25px;
+            text-align: center;
+        }
+    }
 }

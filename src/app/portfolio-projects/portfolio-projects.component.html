@@ -1,21 +1,11 @@
 <section [ngClass]="{'reversed-section': isReversed}">
-    <div *ngIf="isReversed" class="project-infos align-end">
+    <img [src]="imageUrl" alt="{{ title }}">
+
+    <div  class="project-infos align-end">
         <h3>{{ title }}</h3>
         <p class="languages">{{ languages }}</p>
         <p>{{ description }}</p>
         <div class="container-buttons justify-end">
-            <a [href]="liveTestLink" class="live-test">Live test</a>
-            <a [href]="gitHubLink" class="github">Github</a>
-        </div>
-    </div>
-
-    <img [src]="imageUrl" alt="{{ title }}">
-
-    <div *ngIf="!isReversed" class="project-infos">
-        <h3>{{ title }}</h3>
-        <p class="languages">{{ languages }}</p>
-        <p>{{ description }}</p>
-        <div class="container-buttons flex-end">
             <a [href]="liveTestLink" class="live-test">Live test</a>
             <a [href]="gitHubLink" class="github">Github</a>
         </div>
