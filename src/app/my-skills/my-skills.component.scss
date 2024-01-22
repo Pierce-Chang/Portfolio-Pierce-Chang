@@ -226,3 +226,23 @@ $purple: #9747FF;
         }
     }
 }
+
+@media (max-width: 1400px) { 
+    
+    .my-skills-p {
+        width: 450px !important;
+        h2 {
+            font-size: 70px !important;
+            font-weight: 700;
+        }
+    }
+
+    .skill-icons {
+        gap: 30px 80px !important; // Space between grid items
+        margin-left: 85px;
+
+        img {
+            transform: scale(0.8);
+        }
+    }
+}
