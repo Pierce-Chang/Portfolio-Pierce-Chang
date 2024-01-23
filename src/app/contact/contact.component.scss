@@ -458,6 +458,36 @@ section {
     .purple_shadow4 {
         height: 500px;
         left: -50px;
-        top: 4950px;
+        top: 5100px;
+    }
+
+    section {
+        margin: 0 100px;
+
+        .container-form {
+            width: 100% !important;
+        }
+
+        .container-text-form {
+            flex-direction: column;
+            gap: 32px;
+
+            form {
+                width: 100%;
+                gap: 24px;
+
+                .name-email-input {
+                    width: calc(100% - 50px);
+                }
+
+                .form-textarea {
+                    width: calc(100% - 50px);
+                }
+
+                .container-accept {
+                    width: calc(100% - 50px);
+                }
+            }
+        }
     }
 }
