@@ -135,5 +135,18 @@ section {
         top: 1760px;
         right: 0;
     }
-    
+}
+
+@media (max-width: 1200px) {
+    .purple-shadow3 {
+        width: 570px;
+        top: 1080px;
+        left: -100px;
+    }
+
+    .green-shadow3 {
+        height: 600px;
+        top: 1300px;
+        right: 0;
+    }
 }

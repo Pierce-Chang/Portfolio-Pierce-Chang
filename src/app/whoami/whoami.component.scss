@@ -177,13 +177,14 @@ section {
 }
 
 @media (max-width: 450px) {
-
     section {
         overflow-x: hidden !important;
+        margin-bottom: -150px;
     }
 
     .pierce_profile {
-        height: 500px;
+        height: 800px;
+        top: -120px;
         left: 50%;
         transform: translateX(-50%) scaleX(-1);
     }
@@ -205,7 +206,7 @@ section {
     }
 
     .container-whoami {
-        top: 579px;
+        top: 600px !important;
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
@@ -217,10 +218,10 @@ section {
         .iam {
             width: 32px;
             padding-bottom: 6px;
-            
+
             span {
-            font-size: 32px;
-            padding-right: 4px;
+                font-size: 32px;
+                padding-right: 4px;
             }
         }
 
@@ -233,7 +234,7 @@ section {
     .vector {
         object-fit: cover;
         width: 100vw;
-        top: 400px;
+        top: 460px;
         left: 0;
         z-index: 0;
         pointer-events: none;
@@ -262,7 +263,62 @@ section {
     }
 }
 
-@media (max-width: 1400px) { 
+@media (max-width: 1200px) {
+    section {
+        margin-bottom: 0px;
+    }
+
+    .container-whoami {
+        top: 670px;
+        left: 50%;
+        transform: translateX(-50%) scale(0.85);
+        width: 100%;
+
+         a {
+            margin-top: 0px;
+         }
+    }
+
+    .pierce_profile {
+        top: -130px;
+        left: 50% !important;
+        transform: translateX(-50%) scaleX(-1) scale(0.7);
+    }
+
+    .photo_shadows {
+        width: 100vw;
+        filter: blur(34px);
+        position: absolute;
+        top: 171.62px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 0;
+    }
+
+    .vector {
+        top: 240px;
+    }
+
+    .media-line {
+        top: 1000px;
+    }
+
+    .scroll-down-container {
+        right: 0;
+        top: 900px;
+
+        p {
+            font-size: 16px;
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+@media (max-width: 1400px) {
     .container-whoami {
         .iam {
             span {
@@ -270,23 +326,23 @@ section {
                 padding-right: 8px;
             }
         }
-    
+
         a {
             font-size: 20px;
         }
     }
-    
+
     .name-frontend-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    
+
         .name {
             height: 100px;
             font-size: 76px;
         }
-    
+
         .frontend {
             font-size: 49px;
         }

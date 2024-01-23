@@ -100,6 +100,10 @@ section {
     }
 }
 
+.text-end {
+    text-align: end;
+}
+
 @media (max-width: 450px) {
     section {
         flex-direction: column;
@@ -163,6 +167,30 @@ section {
     }
 }
 
+
+@media (max-width: 1200px) {
+    section {
+        gap: 20px;
+    }
+
+    section img {
+        width: 350px !important;
+    }
+
+    section .project-infos {
+        width: 300px !important;
+    }
+
+    .live-test, .github {
+        font-size: 16px !important;
+        padding: 10px 20px !important;
+    }
+
+    .container-buttons {
+        gap: 50px !important;
+    }
+}
+
 @media (max-width: 1400px) {
     section {
         img {
@@ -170,8 +198,8 @@ section {
             width: 450px;
             position: relative;
             z-index: 1;
-        }    
-        
+        }
+
         .project-infos {
             width: 400px;
         }

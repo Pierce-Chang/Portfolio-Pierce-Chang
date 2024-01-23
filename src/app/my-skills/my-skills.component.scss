@@ -34,13 +34,6 @@ $purple: #9747FF;
     justify-content: space-between;
     padding-top: 220px;
 
-    >img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin-top: 230px;
-    }
-
     .skill-icons {
         display: grid; // Use grid instead of flex
         grid-template-columns: repeat(4, 1fr); // Create 4 columns
@@ -85,6 +78,11 @@ $purple: #9747FF;
         }
     }
 
+    .green-shadow2 {
+        position: absolute;
+        top: 330px;
+        left: 0;
+    }
 
     .my-skills-p {
         display: flex;
@@ -210,11 +208,6 @@ $purple: #9747FF;
         gap: 20px 56px !important;
         margin: 0 25px !important;
 
-        &:last-child:nth-child(3n+1) {
-            grid-column-start: 2 !important;
-            grid-column-end: span 1 !important;
-        }
-
         img {
             height: 45px !important;
             padding-bottom: 6px !important;
@@ -227,22 +220,44 @@ $purple: #9747FF;
     }
 }
 
-@media (max-width: 1400px) { 
-    
-    .my-skills-p {
-        width: 450px !important;
-        h2 {
-            font-size: 70px !important;
-            font-weight: 700;
+@media (max-width: 1200px) { 
+    .container-skills {
+        flex-direction: column-reverse;
+        gap: 80px;
+        padding-top: 110px;
+    }
+
+    .container-skills .my-skills-p {
+        width: 100%;
+        p {
+            width: 500px;
+            padding-top: 0;
         }
     }
 
     .skill-icons {
         gap: 30px 80px !important; // Space between grid items
-        margin-left: 85px;
+        margin: 0 85px;
 
         img {
-            transform: scale(0.8);
+            transform: unset;
         }
+    }
+
+    .get-in-touch {
+        justify-content: flex-end;
+        margin-right: 100px;
+    }
+}
+
+@media (max-width: 1400px) { 
+    .skill-icons {
+        gap: 30px 80px !important; // Space between grid items
+        margin-left: 85px;
+    }
+
+    .green-shadow2 {
+        top: 330px;
+        left: 0;
     }
 }
