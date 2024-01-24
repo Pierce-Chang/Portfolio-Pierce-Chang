@@ -157,6 +157,40 @@ $purple: #9747FF;
 }
 
 @media (max-width: 450px) {
+   .get-in-touch {
+        top: 900px;
+    }
+
+    .my-skills-p {
+        h2 {
+            font-size: 45px !important;
+        }
+
+        p {
+            width: 80%;
+        }
+    }
+
+    .skill-icons {
+        padding-top: 50px;
+        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-rows: repeat(4, 1fr) !important;
+        gap: 20px 56px !important;
+        margin: 0 25px !important;
+
+        img {
+            height: 45px !important;
+            padding-bottom: 6px !important;
+        }
+
+        p {
+            font-size: 14px !important;
+            font-weight: 700 !important;
+        }
+    }
+}
+
+@media (max-width: 800px) {
     .container-skills {
         flex-direction: column-reverse;
     }
@@ -168,21 +202,19 @@ $purple: #9747FF;
 
     .get-in-touch {
         position: absolute;
-        top: 900px;
+        top: 280px;
         a {
             font-size: 16px;
         }
     }
 
     .my-skills-p {
-        width: 100% !important;
-
         h2 {
-            font-size: 45px !important;
+            font-size: 80px !important;
         }
 
         p {
-            width: 80%;
+            width: 430px !important;
             padding-top: 0 !important;
             margin-right: 25px !important;
         }
@@ -207,18 +239,9 @@ $purple: #9747FF;
         grid-template-rows: repeat(4, 1fr) !important;
         gap: 20px 56px !important;
         margin: 0 25px !important;
-
-        img {
-            height: 45px !important;
-            padding-bottom: 6px !important;
-        }
-
-        p {
-            font-size: 14px !important;
-            font-weight: 700 !important;
-        }
     }
 }
+
 
 @media (max-width: 1200px) { 
     .container-skills {

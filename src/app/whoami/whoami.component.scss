@@ -263,6 +263,12 @@ section {
     }
 }
 
+@media (max-width: 800px) {
+    .scroll-down-container {
+        margin-right: 25px;
+    }
+}
+
 @media (max-width: 1200px) {
     section {
         margin-bottom: 0px;
