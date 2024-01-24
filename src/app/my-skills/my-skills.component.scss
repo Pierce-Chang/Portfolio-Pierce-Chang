@@ -196,6 +196,12 @@ $purple: #9747FF;
         justify-content: flex-end;
         margin-right: 100px;
     }
+
+    .green-shadow2 {
+        top: 680px !important;
+        height: 547.06px;
+        left: 0;
+    }
 }
 
 @media (max-width: 800px) {
@@ -251,8 +257,17 @@ $purple: #9747FF;
 }
 
 @media (max-width: 450px) {
+    .container-skills {
+        margin-top: -200px;
+        gap: 10px;
+    }
+
     .get-in-touch {
-         top: 900px;
+         top: 770px;
+         left: 0;
+         width: 100%;
+         margin-right: 0;
+         justify-content: center;
      }
  
      .my-skills-p {

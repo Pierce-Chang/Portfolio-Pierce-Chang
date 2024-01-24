@@ -176,8 +176,10 @@ section {
     }
 
     .purple-shadow3 {
+        width: 342px;
         height: 342px;
         position: absolute;
+        filter: blur(20px);
         top: 1300px;
         left: 50%;
         transform: translateX(-50%);
