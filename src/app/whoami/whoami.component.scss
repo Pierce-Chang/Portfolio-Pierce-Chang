@@ -36,7 +36,7 @@ section {
         align-items: center;
 
         span {
-            text-wrap: nowrap;
+            white-space: nowrap;
             font-size: 64px;
             font-weight: 400;
             padding-right: 14px;
@@ -77,13 +77,13 @@ section {
 
     .name {
         height: 108px;
-        text-wrap: nowrap;
+        white-space: nowrap;
         font-weight: 700;
         font-size: 90px;
     }
 
     .frontend {
-        text-wrap: nowrap;
+        white-space: nowrap;
         font-weight: 400;
         font-size: 58px;
         color: $purple;
@@ -167,7 +167,7 @@ section {
         font-size: 23px;
         font-weight: 400;
         transform: translateY(-2px);
-        text-wrap: nowrap;
+        white-space: nowrap;
     }
 
     img {
@@ -176,96 +176,27 @@ section {
     }
 }
 
-@media (max-width: 450px) {
-    section {
-        overflow-x: hidden !important;
-        margin-bottom: -150px;
+@media (max-width: 1400px) {
+    .container-whoami .iam span {
+        font-size: 57px;
+        padding-right: 8px;
+    }
+
+    .container-whoami a {
+        font-size: 20px;
+    }
+
+    .name-frontend-container .name {
+        height: 100px;
+        font-size: 76px;
+    }
+
+    .name-frontend-container .frontend {
+        font-size: 49px;
     }
 
     .pierce_profile {
-        height: 800px;
-        top: -120px;
-        left: 50%;
-        transform: translateX(-50%) scaleX(-1);
-    }
-
-    .name-frontend-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        .name {
-            height: 55px;
-            font-size: 45px;
-        }
-
-        .frontend {
-            font-size: 29px;
-        }
-    }
-
-    .container-whoami {
-        top: 600px !important;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-
-        .whoami {
-            height: 86px;
-        }
-
-        .iam {
-            width: 32px;
-            padding-bottom: 6px;
-
-            span {
-                font-size: 32px;
-                padding-right: 4px;
-            }
-        }
-
-        a {
-            margin-top: 40px;
-            font-size: 16px;
-        }
-    }
-
-    .vector {
-        object-fit: cover;
-        width: 100vw;
-        top: 460px;
-        left: 0;
-        z-index: 0;
-        pointer-events: none;
-    }
-
-    .media-line {
-        top: 800px;
-
-        .email-media {
-            display: none;
-        }
-    }
-
-    .scroll-down-container {
-        display: none;
-    }
-
-    .photo_shadows {
-        width: 100vw;
-        filter: blur(34px);
-        position: absolute;
-        top: 171.62px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 0;
-    }
-}
-
-@media (max-width: 800px) {
-    .scroll-down-container {
-        margin-right: 25px;
+        left: 80px;
     }
 }
 
@@ -280,9 +211,9 @@ section {
         transform: translateX(-50%) scale(0.85);
         width: 100%;
 
-         a {
+        a {
             margin-top: 0px;
-         }
+        }
     }
 
     .pierce_profile {
@@ -292,10 +223,11 @@ section {
     }
 
     .photo_shadows {
-        width: 100vw;
+        width: 100%;
+        height: 90%;
         filter: blur(34px);
         position: absolute;
-        top: 171.62px;
+        top: 90px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 0;
@@ -324,37 +256,52 @@ section {
     }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 800px) {
+    .media-line .email-media {
+        display: none;
+    }
+
+    .scroll-down-container {
+        margin-right: 25px;
+    }
+
     .container-whoami {
-        .iam {
-            span {
-                font-size: 57px;
-                padding-right: 8px;
-            }
-        }
+        margin-left: -15px;
+        transform: translateX(-50%) scale(0.65);
+    }
+}
+
+@media (max-width: 450px) {
+    .pierce_profile {
+        top: -220px;
+        transform: translateX(-50%) scaleX(-1) scale(0.5);
+    }
+
+    .container-whoami {
+        top: 410px;
+        transform: translateX(-50%) scale(0.5);
 
         a {
-            font-size: 20px;
+            margin-top: 10px;
         }
     }
 
-    .name-frontend-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        .name {
-            height: 100px;
-            font-size: 76px;
-        }
-
-        .frontend {
-            font-size: 49px;
-        }
+    .vector {
+        top: 360px;
+        width: 100vw;
+        height: 300px;
     }
 
-    .pierce_profile {
-        left: 80px;
+    .photo_shadows {
+        height: 500px;
+        top: 120px;
+    }
+
+    .media-line {
+        top: 630px;
+    }
+
+    .scroll-down-container {
+        display: none;
     }
 }

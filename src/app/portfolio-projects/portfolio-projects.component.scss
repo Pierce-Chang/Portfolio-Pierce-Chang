@@ -63,7 +63,7 @@ section {
     gap: 86px;
 
     .live-test {
-        text-wrap: nowrap;
+        white-space: nowrap;
         font-weight: 400;
         font-size: 23px;
         padding: 15px 30px;
@@ -102,6 +102,44 @@ section {
 
 .text-end {
     text-align: end;
+}
+
+@media (max-width: 1400px) {
+    section {
+        img {
+            padding: 0 0px;
+            width: 450px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-infos {
+            width: 400px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    section {
+        gap: 20px;
+    }
+
+    section img {
+        width: 350px !important;
+    }
+
+    section .project-infos {
+        width: 300px !important;
+    }
+
+    .live-test, .github {
+        font-size: 16px !important;
+        padding: 10px 20px !important;
+    }
+
+    .container-buttons {
+        gap: 50px !important;
+    }
 }
 
 @media (max-width: 800px) {
@@ -164,44 +202,6 @@ section {
 
         .github {
             text-align: center;
-        }
-    }
-}
-
-@media (max-width: 1200px) {
-    section {
-        gap: 20px;
-    }
-
-    section img {
-        width: 350px !important;
-    }
-
-    section .project-infos {
-        width: 300px !important;
-    }
-
-    .live-test, .github {
-        font-size: 16px !important;
-        padding: 10px 20px !important;
-    }
-
-    .container-buttons {
-        gap: 50px !important;
-    }
-}
-
-@media (max-width: 1400px) {
-    section {
-        img {
-            padding: 0 0px;
-            width: 450px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .project-infos {
-            width: 400px;
         }
     }
 }
