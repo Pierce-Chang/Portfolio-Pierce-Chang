@@ -27,3 +27,25 @@ section {
         }
     }
 }
+
+@media (max-width: 800px) {
+    section {
+        padding: 50px 20px;
+
+        h1 {
+            font-size: 60px;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        a {
+            font-size: 20px;
+        }
+    }
+}

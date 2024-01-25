@@ -56,7 +56,7 @@ section {
 
 .green-shadow3 {
     position: absolute;
-    top: 1250px;
+    top: 1500px;
     right: 0;
 }
 
@@ -79,9 +79,7 @@ section {
     }
 
     .green-shadow3 {
-        height: 600px;
         top: 1300px;
-        right: 0;
     }
 }
 
@@ -123,6 +121,23 @@ section {
             margin: 0 25px;
             text-align: center;
         }
+    }
+
+    .purple-shadow3 {
+        width: 450px;
+        height: 450px;
+        position: absolute;
+        filter: blur(20px);
+        top: 1360px;
+        left: -40px;
+        pointer-events: none;
+    }
+    
+    .green-shadow3 {
+        height: 550px;
+        position: absolute;
+        top: 2170px;
+        right: 0;
     }
 }
 
@@ -176,20 +191,18 @@ section {
     }
 
     .purple-shadow3 {
-        width: 342px;
-        height: 342px;
-        position: absolute;
-        filter: blur(20px);
-        top: 1300px;
+        width: 430px;
+        height: 430px;
+        top: 1430px;
         left: 50%;
         transform: translateX(-50%);
-        pointer-events: none;
+        overflow: hidden;
     }
     
     .green-shadow3 {
-        height: 429px;
+        height: 430px;
         position: absolute;
-        top: 1760px;
+        top: 2500px;
         right: 0;
     }
 }

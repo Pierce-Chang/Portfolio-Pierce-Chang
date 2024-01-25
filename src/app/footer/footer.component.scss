@@ -58,7 +58,7 @@ section {
 .codedby {
     color: white;
     font-size: 23px;
-    font-weight: 400px;
+    font-weight: 400;
 }
 
 .media-buttons {
@@ -76,6 +76,12 @@ section {
         &:hover {
             transform: scale(1.4);
         }
+    }
+}
+
+@media (max-width: 1200px) {
+    .codedby {
+        font-size: 16px;
     }
 }
 
@@ -110,18 +116,14 @@ section {
         justify-content: center;
         width: 100%;
         position: relative;
-        top: -40px;
+        top: -90px;
+        font-size: 23px;
     }
 
     .media-buttons {
         margin-right: 0;
         position: relative;
-        top: -75px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .codedby {
-        font-size: 16px;
+        top: -125px;
+        height: max-content;
     }
 }
