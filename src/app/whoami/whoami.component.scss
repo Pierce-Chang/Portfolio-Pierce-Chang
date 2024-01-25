@@ -272,14 +272,18 @@ section {
 }
 
 @media (max-width: 450px) {
+    section {
+        margin-bottom: -260px;
+    }
+
     .pierce_profile {
         top: -220px;
         transform: translateX(-50%) scaleX(-1) scale(0.5);
     }
 
     .container-whoami {
-        top: 410px;
-        transform: translateX(-50%) scale(0.5);
+        top: 450px;
+        transform: translateX(-50%) scale(0.55);
 
         a {
             margin-top: 24px;
@@ -287,7 +291,7 @@ section {
     }
 
     .vector {
-        top: 360px;
+        top: 380px;
         width: 100vw;
         height: 300px;
     }
@@ -298,10 +302,20 @@ section {
     }
 
     .media-line {
-        top: 630px;
+        top: 720px;
+
+        .purple-line {
+            width: 64px;
+        }
     }
 
     .scroll-down-container {
         display: none;
+    }
+
+    .container-whoami a {
+        font-size: 16px;
+        transform: scale(1.7);
+        margin-top: 50px;
     }
 }

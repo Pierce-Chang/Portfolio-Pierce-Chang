@@ -228,7 +228,7 @@ $purple: #9747FF;
         }
 
         p {
-            width: 430px !important;
+            width: 430px;
             padding-top: 0 !important;
             margin-right: 25px !important;
         }
@@ -258,12 +258,12 @@ $purple: #9747FF;
 
 @media (max-width: 450px) {
     .container-skills {
-        margin-top: -200px;
+        margin-bottom: 70px;
         gap: 10px;
     }
 
     .get-in-touch {
-         top: 770px;
+         top: 790px;
          left: 0;
          width: 100%;
          margin-right: 0;
@@ -276,12 +276,12 @@ $purple: #9747FF;
          }
  
          p {
-             width: 80%;
+             width: 80% !important;
          }
      }
  
      .skill-icons {
-         padding-top: 50px;
+         padding-top: 40px;
          grid-template-columns: repeat(3, 1fr) !important;
          grid-template-rows: repeat(4, 1fr) !important;
          gap: 20px 56px !important;

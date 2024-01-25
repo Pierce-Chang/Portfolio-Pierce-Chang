@@ -8,7 +8,7 @@ section {
     justify-content: center;
     align-items: center;
     margin-top: -60px;
-    padding: 0 100px 100px 100px;
+    padding: 0 100px;
     gap: 120px;
 
     img {
@@ -132,7 +132,8 @@ section {
         width: 300px !important;
     }
 
-    .live-test, .github {
+    .live-test,
+    .github {
         font-size: 16px !important;
         padding: 10px 20px !important;
     }
@@ -189,11 +190,8 @@ section {
     }
 
     .container-buttons {
-        display: flex;
         justify-content: center;
-        align-items: center;
         width: 100%;
-        height: max-content;
         gap: 50px;
 
         .live-test {
@@ -202,6 +200,28 @@ section {
 
         .github {
             text-align: center;
+        }
+    }
+}
+
+@media (max-width:450px) {
+    section {
+        margin-bottom: 70px;
+    }
+
+    section img {
+        width: 260px !important;
+        margin-bottom: -20px;
+    }
+
+    .container-buttons {
+        margin-top: 16px;
+        .live-test {
+            font-size: 23px !important;
+        }
+
+        .github {
+            font-size: 23px !important;
         }
     }
 }
