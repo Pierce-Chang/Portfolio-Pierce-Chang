@@ -3,7 +3,7 @@ $green: #70E61C;
 $purple: #9747FF;
 $red: #E61C40;
 
-.fly-in-element{
+.fly-in-element {
     opacity: 0;
     transform: translateX(-100px);
     transition: transform 0.5s ease, opacity 0.5s ease;
@@ -12,7 +12,7 @@ $red: #E61C40;
     overflow: hidden;
 }
 
-.fly-in{
+.fly-in {
     opacity: 1;
     transform: translateX(0);
 }
@@ -92,6 +92,7 @@ section {
                     border: 1px solid #1CDAE6;
                 }
 
+                &.ng-dirty.ng-invalid,
                 &.ng-touched.ng-invalid {
                     border-color: $red;
                 }
@@ -168,6 +169,7 @@ section {
                     border: 1px solid #1CDAE6;
                 }
 
+                &.ng-dirty.ng-invalid,
                 &.ng-touched.ng-invalid {
                     border-color: $red;
                 }
@@ -280,7 +282,6 @@ section {
 }
 
 .modal {
-    display: block;
     position: fixed;
     z-index: 99999;
     left: 0;
@@ -288,8 +289,6 @@ section {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
@@ -304,9 +303,37 @@ section {
     text-align: center;
     padding-top: 30px;
     position: relative;
-    top: 44vh;
+    top: 20%;
     transform: translateY(-50%);
     z-index: 99999;
+}
+
+@keyframes flyIn {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes flyOut {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.modal-fly-in {
+    animation: flyIn 0.5s forwards;
+}
+
+.modal-fly-out {
+    animation: flyOut 0.5s forwards;
 }
 
 .close {

@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
@@ -16,15 +17,20 @@ export class ContactComponent implements OnInit {
   message = { name: '', email: '', text: '' };
   messageForm!: FormGroup;
   showSuccessModal = false;
+  flyOut = false;
   normalScrollUpImage = '/assets/img/go_up_button.png';
   hoverScrollUpImage = '/assets/img/go_up_button_hover.png';
+  namePlaceholder!: string;
+  emailPlaceholder!: string;
+  messagePlaceholder!: string;
 
   currentScrollUpImage: string;
 
   constructor(
     private builder: FormBuilder,
     private http: HttpClient,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private translate: TranslateService
 
   ) { this.currentScrollUpImage = this.normalScrollUpImage; }
 
@@ -43,45 +49,77 @@ export class ContactComponent implements OnInit {
       text: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(500)]],
       accept: [this.isChecked, Validators.requiredTrue]
     });
+
+    this.getTranslations();
+    this.subscribeToLangChange();
+  }
+
+  private getTranslations() {
+    this.setPlaceholders();
+  }
+
+  private setPlaceholders() {
+    this.translate.get('Your name').subscribe((res: string) => {
+      this.namePlaceholder = res;
+    });
+    this.translate.get('Your email').subscribe((res: string) => {
+      this.emailPlaceholder = res;
+    });
+    this.translate.get('Your message').subscribe((res: string) => {
+      this.messagePlaceholder = res;
+    });
+  }
+
+  private subscribeToLangChange() {
+    this.translate.onLangChange.subscribe(() => {
+      this.setPlaceholders();
+    });
   }
 
   checkFormAndSubmit() {
     this.submitted = true;
-    this.markFormGroupTouched(this.messageForm);
-  
+    this.markFormGroupAsDirty(this.messageForm);
+
     if (this.messageForm.valid) {
       this.sendMail();
     }
   }
-  
-  private markFormGroupTouched(formGroup: FormGroup) {
+
+  private markFormGroupAsDirty(formGroup: FormGroup) {
     Object.values(formGroup.controls).forEach(control => {
-      control.markAsTouched();
-  
+      control.markAsDirty();
+
       if (control instanceof FormGroup) {
-        this.markFormGroupTouched(control);
+        this.markFormGroupAsDirty(control);
       }
     });
   }
 
+
   sendMail() {
     if (this.messageForm.valid) {
-      this.showSuccessModal = true;
       const url = 'https://pierce-chang.de/send_mail/send_mail.php';
       const formData: FormData = new FormData();
       formData.append('name', this.messageForm.value.name);
       formData.append('email', this.messageForm.value.email);
       formData.append('message', this.messageForm.value.text);
+
       this.http.post(url, formData, { responseType: 'text' })
         .subscribe(
           response => {
             console.log('Success!', response);
+            this.showSuccessModal = true;
+            this.flyOut = false;
             this.cdr.detectChanges();
+
+            setTimeout(() => {
+              this.flyOut = true;
+              setTimeout(() => this.showSuccessModal = false, 500);
+            }, 1500);
           },
           error => {
             console.error('Error!', error);
             this.sendNotificationEmail(this.messageForm.value.email);
-            this.showSuccessModal = false;
           }
         );
 
@@ -89,6 +127,7 @@ export class ContactComponent implements OnInit {
       this.submitted = false;
     }
   }
+
 
   sendNotificationEmail(email: string) {
     //TO DO: Logic for couldnt sent email

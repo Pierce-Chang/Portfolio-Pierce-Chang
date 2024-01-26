@@ -27,5 +27,8 @@
     "Please enter a valid email.": "Bitte eine valide Email eingeben.",
     "Message must be at least 10 characters long.": "Ihre Nachricht muss mindestens 10 Zeichen enthalten.",
     "Please accept the privacy policy.": "Bitte die Datenschutzbestimmung akzeptieren.",
-    "Your message was sent successfully!":"Ihre Nachricht wurde erfolgreich gesendet!"
+    "Your message was sent successfully!":"Ihre Nachricht wurde erfolgreich gesendet!",
+    "Your name":"Ihr Name",
+    "Your email":"Ihre Email",
+    "Your message":"Ihre Nachricht"
 }

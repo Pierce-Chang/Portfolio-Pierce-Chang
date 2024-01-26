@@ -27,5 +27,8 @@
     "Please enter a valid email.": "Please enter a valid email.",
     "Message must be at least 10 characters long.": "Message must be at least 10 characters long.",
     "Please accept the privacy policy.": "Please accept the privacy policy.",
-    "Your message was sent successfully!":"Your message was sent successfully!"
+    "Your message was sent successfully!":"Your message was sent successfully!",
+    "Your name":"Your name",
+    "Your email":"Your email",
+    "Your message":"Your message"
 }

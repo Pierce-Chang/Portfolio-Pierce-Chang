@@ -19,10 +19,10 @@
 
                     <div class="form-group">
                         <input autocomplete="name" type="text" id="name" name="name" class="name-email-input"
-                            [ngClass]="{'valid-symbol': name?.valid && name?.touched, 'unvalid-symbol': name?.invalid && name?.touched}"
-                            placeholder="Your name" formControlName="name" />
-                        <div [class.alert-hidden]="!name?.invalid || !name?.touched"
-                            [class.alert-visible]="name?.invalid && name?.touched" class="alert">
+                            [ngClass]="{'valid-symbol': name?.valid && name?.dirty, 'unvalid-symbol': name?.invalid && name?.dirty}"
+                            [placeholder]="namePlaceholder" formControlName="name" />
+                        <div [class.alert-hidden]="!name?.invalid || !name?.dirty"
+                            [class.alert-visible]="name?.invalid && name?.dirty" class="alert">
                             <div class="error-div" *ngIf="name?.errors?.['required']" translate>Your name is required
                             </div>
                             <div class="error-div" *ngIf="name?.errors?.['minlength']" translate>
@@ -33,9 +33,9 @@
 
                     <div class="form-group">
                         <input autocomplete="email" type="email" id="email" name="email" class="name-email-input"
-                            [ngClass]="{'valid-symbol': email?.valid && email?.touched, 'unvalid-symbol': email?.invalid && email?.touched}"
-                            placeholder="Your email" formControlName="email" />
-                        <div [class.alert-hidden]="!email?.invalid || !email?.touched"
+                            [ngClass]="{'valid-symbol': email?.valid && email?.dirty, 'unvalid-symbol': email?.invalid && email?.dirty}"
+                            [placeholder]="emailPlaceholder" formControlName="email"/>
+                        <div [class.alert-hidden]="!email?.invalid || !email?.dirty"
                             [class.alert-visible]="email?.invalid && email?.dirty" class="alert">
                             <div class="error-div" *ngIf="email?.errors?.['required']" translate>Your email is required
                             </div>
@@ -47,11 +47,11 @@
 
                     <div class="form-group">
                         <textarea class="form-textarea"
-                            [ngClass]="{'textarea-valid-symbol': text?.valid && text?.touched, 'textarea-unvalid-symbol': text?.invalid && text?.dirty}"
-                            id="exampleFormControlTextarea1" rows="3" name="message" placeholder="Your message"
+                            [ngClass]="{'textarea-valid-symbol': text?.valid && text?.dirty, 'textarea-unvalid-symbol': text?.invalid && text?.dirty}"
+                            id="exampleFormControlTextarea1" rows="3" name="message" [placeholder]="messagePlaceholder"
                             formControlName="text"></textarea>
-                        <div [class.alert-hidden]="!text?.invalid || !text?.touched"
-                            [class.alert-visible]="text?.invalid && text?.touched" class="alert">
+                        <div [class.alert-hidden]="!text?.invalid || !text?.dirty"
+                            [class.alert-visible]="text?.invalid && text?.dirty" class="alert">
                             <div class="error-div" *ngIf="text?.errors?.['required']" translate>Your message is empty
                             </div>
                             <div class="error-div" *ngIf="text?.errors?.['minlength']" ngx-translate>
@@ -69,7 +69,7 @@
                                 <input style="display: none;" type="checkbox" name="accept" id="accept"
                                     formControlName="accept">
                             </div>
-                            <label for="accept">I've read the <a class="policy-link" href="/privacy-policy">privacy
+                            <label for="accept">I've read the <a class="policy-link" target="_blank" href="/privacy-policy">privacy
                                     policy</a>
                                 and agree to the processing of my data
                                 as outlined.</label>
@@ -88,7 +88,7 @@
                 </form>
             </div>
 
-            <div *ngIf="showSuccessModal" class="modal">
+            <div *ngIf="showSuccessModal" class="modal" [ngClass]="{'modal-fly-in': !flyOut, 'modal-fly-out': flyOut}">
                 <div class="modal-content">
                     <span (click)="closeModal()" class="close">&times;</span>
                     <p translate>Your message was sent successfully!</p>

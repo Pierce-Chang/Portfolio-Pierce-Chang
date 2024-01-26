@@ -5,8 +5,8 @@
         <p class="languages">{{ languages }}</p>
         <p [ngClass]="{'text-end': isReversed}">{{ description }}</p>
         <div [ngClass]="{'justify-end': isReversed}" class="container-buttons">
-            <a [href]="liveTestLink" class="live-test">Live test</a>
-            <a [href]="gitHubLink" class="github">Github</a>
+            <a target="_blank" [href]="liveTestLink" class="live-test">Live test</a>
+            <a target="_blank" [href]="gitHubLink" class="github">Github</a>
         </div>
     </div>
 </section>
