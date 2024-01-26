@@ -12,6 +12,7 @@ section {
         display: flex;
         justify-content: space-between;
         width: 100%;
+        gap: 40px;
 
         .container-contact-me {
             width: 100%;
@@ -348,6 +349,7 @@ section {
     display: flex;
     justify-content: start;
     align-items: center;
+    padding-top: 12px;
 
     label {
         line-height: 16.8px;

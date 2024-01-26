@@ -1,15 +1,15 @@
 <div class="h2-container">
     <div class="short-line-p"></div>
-    <h2>Contact</h2>
+    <h2 translate>Contact</h2>
 </div>
 
 <section>
     <div class="container-text-form">
         <div class="container-contact-me">
-            <h3>Got a problem to solve?</h3>
-            <p>Contact me through this form, I am interested in hearing<br> you, knowing your ideas and contributing to
-                your projects<br> with my work.</p>
-            <p>Need a Frontend developer? <span>Contact me!</span></p>
+            <h3 translate>Got a problem to solve?</h3>
+            <p translate>Contact me through this form, I am interested in hearing you, knowing your ideas and contributing to
+                your projects with my work.</p>
+            <p translate>Need a Frontend developer? <span translate>Contact me!</span></p>
         </div>
 
         <div class="container-form">
@@ -21,8 +21,8 @@
                         placeholder="Your name" formControlName="name" />
                     <div [class.alert-hidden]="!name?.invalid || !name?.dirty"
                         [class.alert-visible]="name?.invalid && name?.dirty" class="alert">
-                        <div class="error-div" *ngIf="name?.errors?.['required']">Your name is required</div>
-                        <div class="error-div" *ngIf="name?.errors?.['minlength']">
+                        <div class="error-div" *ngIf="name?.errors?.['required']" translate>Your name is required</div>
+                        <div class="error-div" *ngIf="name?.errors?.['minlength']" translate>
                             Name must be at least 4 characters long.
                         </div>
                     </div>
@@ -34,8 +34,8 @@
                         placeholder="Your email" formControlName="email" />
                     <div [class.alert-hidden]="!email?.invalid || !email?.dirty"
                         [class.alert-visible]="email?.invalid && email?.dirty" class="alert">
-                        <div class="error-div" *ngIf="email?.errors?.['required']">Your Email is required</div>
-                        <div class="error-div" *ngIf="email?.errors?.['email']">
+                        <div class="error-div" *ngIf="email?.errors?.['required']" translate>Your email is required</div>
+                        <div class="error-div" *ngIf="email?.errors?.['email']" translate>
                             Please enter a valid email.
                         </div>
                     </div>
@@ -48,8 +48,8 @@
                         formControlName="text"></textarea>
                     <div [class.alert-hidden]="!text?.invalid || !text?.dirty"
                         [class.alert-visible]="text?.invalid && text?.dirty" class="alert">
-                        <div class="error-div" *ngIf="text?.errors?.['required']">Your message is empty</div>
-                        <div class="error-div" *ngIf="text?.errors?.['minlength']">
+                        <div class="error-div" *ngIf="text?.errors?.['required']" translate>Your message is empty</div>
+                        <div class="error-div" *ngIf="text?.errors?.['minlength']" ngx-translate>
                             Message must be at least 10 characters long.
                         </div>
                     </div>
@@ -72,13 +72,13 @@
                     </div>
                     <div *ngIf="messageForm.controls['accept'].invalid && (messageForm.controls['accept'].dirty || messageForm.controls['accept'].touched || submitted)"
                         class="error-accept">
-                        <div>Please accept the privacy policy.</div>
+                        <div translate>Please accept the privacy policy.</div>
                     </div>
                 </div>
 
                 <div class="button-container">
                     <button type="button" class="submit-button" [class.submit-button-enabled]="messageForm.valid"
-                    (click)="checkFormAndSubmit()">{{ buttonText }}</button>
+                    (click)="checkFormAndSubmit()"><span translate>Send message</span> :&#41;</button>
                 </div>
            
             </form>
@@ -87,7 +87,7 @@
         <div *ngIf="showSuccessModal" class="modal">
             <div class="modal-content">
                 <span (click)="closeModal()" class="close">&times;</span>
-                <p>Ihre Nachricht wurde erfolgreich gesendet!</p>
+                <p translate>Your message was sent successfully!</p>
             </div>
         </div>
     </div>

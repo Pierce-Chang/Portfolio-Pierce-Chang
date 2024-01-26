@@ -14,7 +14,6 @@ export class ContactComponent implements OnInit {
   checkboxImage = ['/assets/img/check_box.png', '/assets/img/check_box_checked.png'];
   isChecked = false;
   submitted = false;
-  buttonText = 'Send message :)';
   message = { name: '', email: '', text: '' };
   messageForm!: FormGroup;
   showSuccessModal = false; // Modal-Status
