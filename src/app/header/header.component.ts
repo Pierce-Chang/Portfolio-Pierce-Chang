@@ -11,12 +11,12 @@ export class HeaderComponent {
   isMenuOpen = false;
 
   constructor(public translate: TranslateService) {
-    // Additional logic if needed
+    // Additional logic
   }
 
   setActiveLink(link: string): void {
     this.activeLink = link;
-    this.isMenuOpen = false; // Schließt das Menü, nachdem ein Link ausgewählt wurde
+    this.isMenuOpen = false;
   }
 
   toggleMenu(): void {

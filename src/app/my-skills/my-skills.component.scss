@@ -35,12 +35,12 @@ $purple: #9747FF;
     padding-top: 220px;
 
     .skill-icons {
-        display: grid; // Use grid instead of flex
-        grid-template-columns: repeat(4, 1fr); // Create 4 columns
-        grid-template-rows: repeat(3, 1fr); // Create 3 rows
-        justify-items: center; // Center items horizontally
-        align-items: start; // Center items vertically
-        gap: 54px 123px; // Space between grid items
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        justify-items: center;
+        align-items: start;
+        gap: 54px 123px;
         z-index: 1;
         margin-left: 85px;
 
@@ -163,7 +163,7 @@ $purple: #9747FF;
 
 @media (max-width: 1400px) { 
     .skill-icons {
-        gap: 30px 80px !important; // Space between grid items
+        gap: 30px 80px !important;
         margin-left: 85px;
     }
 
@@ -189,7 +189,7 @@ $purple: #9747FF;
     }
 
     .skill-icons {
-        gap: 30px 80px !important; // Space between grid items
+        gap: 30px 80px !important;
         margin: 0 85px;
 
         img {

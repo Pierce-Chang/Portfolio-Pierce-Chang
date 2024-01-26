@@ -16,12 +16,10 @@ export class ContactComponent implements OnInit {
   submitted = false;
   message = { name: '', email: '', text: '' };
   messageForm!: FormGroup;
-  showSuccessModal = false; // Modal-Status
-  // Pfad für das normale und das Hover-Bild
+  showSuccessModal = false;
   normalScrollUpImage = '/assets/img/go_up_button.png';
   hoverScrollUpImage = '/assets/img/go_up_button_hover.png';
 
-  // Aktuell angezeigtes Bild
   currentScrollUpImage: string;
 
   constructor(
@@ -31,12 +29,10 @@ export class ContactComponent implements OnInit {
 
   ) {this.currentScrollUpImage = this.normalScrollUpImage;}
 
-  // Methode, um das Bild beim Hover zu ändern
   onMouseOver(): void {
     this.currentScrollUpImage = this.hoverScrollUpImage;
   }
 
-  // Methode, um das Bild beim Verlassen des Hover-Zustands zurückzusetzen
   onMouseOut(): void {
     this.currentScrollUpImage = this.normalScrollUpImage;
   }
@@ -51,7 +47,7 @@ export class ContactComponent implements OnInit {
   }
 
   checkFormAndSubmit() {
-    this.submitted = true; // Markiert das Formular als "versucht zu senden"
+    this.submitted = true;
   
     if (this.messageForm.valid) {
       this.sendMail();
@@ -60,24 +56,22 @@ export class ContactComponent implements OnInit {
 
   sendMail() {
     if (this.messageForm.valid) {
-      this.showSuccessModal = true; // Modal anzeigen
+      this.showSuccessModal = true;
       const url = 'https://pierce-chang.de/send_mail/send_mail.php';
       const formData: FormData = new FormData();
       formData.append('name', this.messageForm.value.name);
-      formData.append('email', this.messageForm.value.email); // E-Mail hinzufügen
-      formData.append('message', this.messageForm.value.text); // Nachricht
-
+      formData.append('email', this.messageForm.value.email);
+      formData.append('message', this.messageForm.value.text);
       this.http.post(url, formData, { responseType: 'text' })
         .subscribe(
           response => {
             console.log('Success!', response);
-            this.cdr.detectChanges(); // Änderungen erkennen
-            // Weitere Erfolgslogik
+            this.cdr.detectChanges();
           },
           error => {
             console.error('Error!', error);
             this.sendNotificationEmail(this.messageForm.value.email);
-            this.showSuccessModal = false; // Im Fehlerfall Modal ausblenden
+            this.showSuccessModal = false;
           }
         );
 
@@ -87,11 +81,11 @@ export class ContactComponent implements OnInit {
   }
 
   sendNotificationEmail(email: string) {
-    // Logik zum Senden einer Benachrichtigungs-E-Mail
+    //TO DO: Logic for couldnt sent email
   }
 
   closeModal() {
-    this.showSuccessModal = false; // Modal schließen
+    this.showSuccessModal = false;
   }
 
   get name() {
