@@ -18,6 +18,7 @@ $purple: #9747FF;
             font-weight: 700;
             padding-bottom: 30px;
             line-height: 71px;
+            pointer-events: none;
         }
 
         p {
@@ -26,6 +27,7 @@ $purple: #9747FF;
             font-weight: 400;
             color: white;
             line-height: 19.2px;
+            pointer-events: none;
         }
     }
 }
@@ -52,6 +54,7 @@ $purple: #9747FF;
     align-items: center;
     justify-content: center;
     z-index: 1;
+    pointer-events: none;
 
     img {
         width: 453px;

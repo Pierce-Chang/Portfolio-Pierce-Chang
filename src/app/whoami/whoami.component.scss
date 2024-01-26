@@ -26,6 +26,7 @@ section {
         align-items: center;
         height: 172px;
         color: white;
+        pointer-events: none;
     }
 
     .iam {
@@ -95,6 +96,7 @@ section {
     left: 100px;
     height: 900px;
     transform: scaleX(-1);
+    -webkit-user-drag: none;
 }
 
 .vector {
@@ -104,6 +106,7 @@ section {
     top: 327.6px;
     left: 0;
     z-index: 0;
+    -webkit-user-drag: none;
 }
 
 .photo_shadows {
@@ -111,6 +114,7 @@ section {
     top: 171.62px;
     left: 0;
     z-index: 0;
+    pointer-events: none;
 }
 
 .media-line {
@@ -168,6 +172,7 @@ section {
         font-weight: 400;
         transform: translateY(-2px);
         white-space: nowrap;
+        pointer-events: none;
     }
 
     img {

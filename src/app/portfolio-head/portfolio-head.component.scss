@@ -17,6 +17,8 @@ section {
     > p {
         color: white;
     }
+
+    pointer-events: none;
 }
 
 .portfolio-head-container {
@@ -58,6 +60,7 @@ section {
     position: absolute;
     top: 1500px;
     right: 0;
+    pointer-events: none;
 }
 
 .short-witdh {

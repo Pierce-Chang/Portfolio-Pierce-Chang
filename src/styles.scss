@@ -12,6 +12,34 @@ html {
   box-sizing: border-box;
 }
 
+/* Für WebKit-Browser wie Chrome, Safari */
+::-webkit-scrollbar {
+  width: 16px; /* Breite des vertikalen Scrollbalkens */
+  height: 16px; /* Höhe des horizontalen Scrollbalkens */
+}
+
+::-webkit-scrollbar-track {
+  background: $background-color; /* Farbe des Hintergrunds des Scrollbalkens */
+  border-radius: 8px; /* Abrundung der Ecken */
+  box-shadow: inset 0 0 6px rgba($color: white, $alpha: 0.2); /* Weißer Schatten */
+}
+
+::-webkit-scrollbar-thumb {
+  background: $purple; /* Farbe des beweglichen Teils des Scrollbalkens */
+  border-radius: 8px; /* Abrundung der Ecken */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $green; /* Farbe des Scrollbalkens beim Hovern */
+}
+
+/* Für Firefox */
+* {
+  scrollbar-width: auto; /* 'auto', 'thin' oder 'none' */
+  scrollbar-color: $purple $background-color; /* Farbe des beweglichen Teils und des Hintergrunds */
+}
+
+
 .mat-typography {
   font-family: 'Poppins', sans-serif;
   font: unset;
@@ -43,8 +71,9 @@ html {
 
   body {
     overflow: hidden;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
   }
 
   body::-webkit-scrollbar {

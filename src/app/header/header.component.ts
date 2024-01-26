@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,10 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   activeLink!: string;
   isMenuOpen = false;
+
+  constructor(public translate: TranslateService) {
+    // Additional logic if needed
+  }
 
   setActiveLink(link: string): void {
     this.activeLink = link;

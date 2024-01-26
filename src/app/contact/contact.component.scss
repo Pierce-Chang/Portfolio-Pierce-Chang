@@ -15,6 +15,7 @@ section {
 
         .container-contact-me {
             width: 100%;
+            pointer-events: none;
 
             h3 {
                 color: white;
@@ -361,6 +362,7 @@ section {
     justify-content: start;
     padding-top: 105px;
     padding-bottom: 20px;
+    pointer-events: none;
 
     h2 {
         color: white;
