@@ -1,14 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
   checkboxImage = ['/assets/img/check_box.png', '/assets/img/check_box_checked.png'];
@@ -27,7 +26,7 @@ export class ContactComponent implements OnInit {
     private http: HttpClient,
     private cdr: ChangeDetectorRef
 
-  ) {this.currentScrollUpImage = this.normalScrollUpImage;}
+  ) { this.currentScrollUpImage = this.normalScrollUpImage; }
 
   onMouseOver(): void {
     this.currentScrollUpImage = this.hoverScrollUpImage;
@@ -39,7 +38,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.messageForm = this.builder.group({
-      name: ['', [Validators.required, Validators.minLength(4) , Validators.maxLength(30)]],
+      name: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(30)]],
       email: ['', [Validators.required, Validators.email]],
       text: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(500)]],
       accept: [this.isChecked, Validators.requiredTrue]
@@ -48,10 +47,21 @@ export class ContactComponent implements OnInit {
 
   checkFormAndSubmit() {
     this.submitted = true;
+    this.markFormGroupTouched(this.messageForm);
   
     if (this.messageForm.valid) {
       this.sendMail();
     }
+  }
+  
+  private markFormGroupTouched(formGroup: FormGroup) {
+    Object.values(formGroup.controls).forEach(control => {
+      control.markAsTouched();
+  
+      if (control instanceof FormGroup) {
+        this.markFormGroupTouched(control);
+      }
+    });
   }
 
   sendMail() {
@@ -98,5 +108,23 @@ export class ContactComponent implements OnInit {
 
   get text() {
     return this.messageForm.get('text');
+  }
+
+  @ViewChild('contactSection') contactSection!: ElementRef;
+  scrolled = 0;
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    if (this.contactSection) {
+      const sectionPos = this.contactSection.nativeElement.getBoundingClientRect();
+      const sectionTop = sectionPos.top;
+      const threshold = 150;
+
+      if (sectionTop < window.innerHeight - threshold) {
+        this.scrolled = 1;
+      } else {
+        this.scrolled = 0;
+      }
+    }
   }
 }

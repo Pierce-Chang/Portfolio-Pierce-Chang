@@ -1,99 +1,105 @@
-<div class="h2-container">
-    <div class="short-line-p"></div>
-    <h2 translate>Contact</h2>
-</div>
-
-<section>
-    <div class="container-text-form">
-        <div class="container-contact-me">
-            <h3 translate>Got a problem to solve?</h3>
-            <p translate>Contact me through this form, I am interested in hearing you, knowing your ideas and contributing to
-                your projects with my work.</p>
-            <p translate>Need a Frontend developer? <span translate>Contact me!</span></p>
-        </div>
-
-        <div class="container-form">
-            <form [formGroup]="messageForm" (ngSubmit)="sendMail()">
-
-                <div class="form-group">
-                    <input autocomplete="name" type="text" id="name" name="name" class="name-email-input"
-                        [ngClass]="{'valid-symbol': name?.valid && name?.dirty, 'unvalid-symbol': name?.invalid && name?.dirty}"
-                        placeholder="Your name" formControlName="name" />
-                    <div [class.alert-hidden]="!name?.invalid || !name?.dirty"
-                        [class.alert-visible]="name?.invalid && name?.dirty" class="alert">
-                        <div class="error-div" *ngIf="name?.errors?.['required']" translate>Your name is required</div>
-                        <div class="error-div" *ngIf="name?.errors?.['minlength']" translate>
-                            Name must be at least 4 characters long.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <input autocomplete="email" type="email" id="email" name="email" class="name-email-input"
-                        [ngClass]="{'valid-symbol': email?.valid && email?.dirty, 'unvalid-symbol': email?.invalid && email?.dirty}"
-                        placeholder="Your email" formControlName="email" />
-                    <div [class.alert-hidden]="!email?.invalid || !email?.dirty"
-                        [class.alert-visible]="email?.invalid && email?.dirty" class="alert">
-                        <div class="error-div" *ngIf="email?.errors?.['required']" translate>Your email is required</div>
-                        <div class="error-div" *ngIf="email?.errors?.['email']" translate>
-                            Please enter a valid email.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <textarea class="form-textarea"
-                        [ngClass]="{'textarea-valid-symbol': text?.valid && text?.dirty, 'textarea-unvalid-symbol': text?.invalid && text?.dirty}"
-                        id="exampleFormControlTextarea1" rows="3" name="message" placeholder="Your message"
-                        formControlName="text"></textarea>
-                    <div [class.alert-hidden]="!text?.invalid || !text?.dirty"
-                        [class.alert-visible]="text?.invalid && text?.dirty" class="alert">
-                        <div class="error-div" *ngIf="text?.errors?.['required']" translate>Your message is empty</div>
-                        <div class="error-div" *ngIf="text?.errors?.['minlength']" ngx-translate>
-                            Message must be at least 10 characters long.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container-accept">
-                    <div class="div-accept">
-                        <div style="height: 25px;">
-                            <img [src]="messageForm.controls['accept'].value ? checkboxImage[1] : checkboxImage[0]"
-                                alt="checkbox"
-                                (click)="messageForm.controls['accept'].setValue(!messageForm.controls['accept'].value)">
-                            <input style="display: none;" type="checkbox" name="accept" id="accept"
-                                formControlName="accept">
-                        </div>
-                        <label for="accept">I've read the <a class="policy-link" href="/privacy-policy">privacy
-                                policy</a>
-                            and agree to the processing of my data
-                            as outlined.</label>
-                    </div>
-                    <div *ngIf="messageForm.controls['accept'].invalid && (messageForm.controls['accept'].dirty || messageForm.controls['accept'].touched || submitted)"
-                        class="error-accept">
-                        <div translate>Please accept the privacy policy.</div>
-                    </div>
-                </div>
-
-                <div class="button-container">
-                    <button type="button" class="submit-button" [class.submit-button-enabled]="messageForm.valid"
-                    (click)="checkFormAndSubmit()"><span translate>Send message</span> :&#41;</button>
-                </div>
-           
-            </form>
-        </div>
-
-        <div *ngIf="showSuccessModal" class="modal">
-            <div class="modal-content">
-                <span (click)="closeModal()" class="close">&times;</span>
-                <p translate>Your message was sent successfully!</p>
-            </div>
-        </div>
+<div #contactSection [ngClass]="{ 'fly-in': scrolled == 1 }" class="fly-in-element">
+    <div class="h2-container">
+        <div class="short-line-p"></div>
+        <h2 translate>Contact</h2>
     </div>
 
-    <a class="scroll-up" href="#">
-        <img src="{{currentScrollUpImage}}" alt="Scroll Up" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
-    </a>
+    <section>
+        <div class="container-text-form">
+            <div class="container-contact-me">
+                <h3 translate>Got a problem to solve?</h3>
+                <p translate>Contact me through this form, I am interested in hearing you, knowing your ideas and
+                    contributing to
+                    your projects with my work.</p>
+                <p translate>Need a Frontend developer? <span translate>Contact me!</span></p>
+            </div>
 
-    <img class="purple_shadow4" src="/assets/img/purple_shadow4.png" alt="">
-</section>
+            <div class="container-form">
+                <form [formGroup]="messageForm" (ngSubmit)="sendMail()">
+
+                    <div class="form-group">
+                        <input autocomplete="name" type="text" id="name" name="name" class="name-email-input"
+                            [ngClass]="{'valid-symbol': name?.valid && name?.touched, 'unvalid-symbol': name?.invalid && name?.touched}"
+                            placeholder="Your name" formControlName="name" />
+                        <div [class.alert-hidden]="!name?.invalid || !name?.touched"
+                            [class.alert-visible]="name?.invalid && name?.touched" class="alert">
+                            <div class="error-div" *ngIf="name?.errors?.['required']" translate>Your name is required
+                            </div>
+                            <div class="error-div" *ngIf="name?.errors?.['minlength']" translate>
+                                Name must be at least 4 characters long.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input autocomplete="email" type="email" id="email" name="email" class="name-email-input"
+                            [ngClass]="{'valid-symbol': email?.valid && email?.touched, 'unvalid-symbol': email?.invalid && email?.touched}"
+                            placeholder="Your email" formControlName="email" />
+                        <div [class.alert-hidden]="!email?.invalid || !email?.touched"
+                            [class.alert-visible]="email?.invalid && email?.dirty" class="alert">
+                            <div class="error-div" *ngIf="email?.errors?.['required']" translate>Your email is required
+                            </div>
+                            <div class="error-div" *ngIf="email?.errors?.['email']" translate>
+                                Please enter a valid email.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-textarea"
+                            [ngClass]="{'textarea-valid-symbol': text?.valid && text?.touched, 'textarea-unvalid-symbol': text?.invalid && text?.dirty}"
+                            id="exampleFormControlTextarea1" rows="3" name="message" placeholder="Your message"
+                            formControlName="text"></textarea>
+                        <div [class.alert-hidden]="!text?.invalid || !text?.touched"
+                            [class.alert-visible]="text?.invalid && text?.touched" class="alert">
+                            <div class="error-div" *ngIf="text?.errors?.['required']" translate>Your message is empty
+                            </div>
+                            <div class="error-div" *ngIf="text?.errors?.['minlength']" ngx-translate>
+                                Message must be at least 10 characters long.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-accept">
+                        <div class="div-accept">
+                            <div style="height: 25px;">
+                                <img [src]="messageForm.controls['accept'].value ? checkboxImage[1] : checkboxImage[0]"
+                                    alt="checkbox"
+                                    (click)="messageForm.controls['accept'].setValue(!messageForm.controls['accept'].value)">
+                                <input style="display: none;" type="checkbox" name="accept" id="accept"
+                                    formControlName="accept">
+                            </div>
+                            <label for="accept">I've read the <a class="policy-link" href="/privacy-policy">privacy
+                                    policy</a>
+                                and agree to the processing of my data
+                                as outlined.</label>
+                        </div>
+                        <div *ngIf="messageForm.controls['accept'].invalid && (messageForm.controls['accept'].dirty || messageForm.controls['accept'].touched || submitted)"
+                            class="error-accept">
+                            <div translate>Please accept the privacy policy.</div>
+                        </div>
+                    </div>
+
+                    <div class="button-container">
+                        <button type="button" class="submit-button" [class.submit-button-enabled]="messageForm.valid"
+                            (click)="checkFormAndSubmit()"><span translate>Send message</span> :&#41;</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div *ngIf="showSuccessModal" class="modal">
+                <div class="modal-content">
+                    <span (click)="closeModal()" class="close">&times;</span>
+                    <p translate>Your message was sent successfully!</p>
+                </div>
+            </div>
+        </div>
+
+        <a class="scroll-up" href="#">
+            <img src="{{currentScrollUpImage}}" alt="Scroll Up" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
+        </a>
+
+        <img class="purple_shadow4" src="/assets/img/purple_shadow4.png" alt="">
+    </section>
+</div>

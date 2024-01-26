@@ -2,6 +2,20 @@ $background-color: #141D2F;
 $green: #70E61C;
 $purple: #9747FF;
 
+.fly-in-element{
+    opacity: 0;
+    transform: translateX(100px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 10;
+    position: relative;
+    width: 100%;
+}
+
+.fly-in{
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .about-me-container {
     position: relative;
     display: flex;

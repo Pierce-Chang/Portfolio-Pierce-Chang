@@ -14,7 +14,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { ImpressumComponent } from './impressum/impressum.component';
+import { ImprintComponent } from './imprint/imprint.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -33,9 +33,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     MySkillsComponent,
     PortfolioHeadComponent,
     PortfolioProjectsComponent,
+    ImprintComponent,
     ContactComponent,
     FooterComponent,
-    ImpressumComponent,
     PrivacyPolicyComponent,
     HomepageComponent
   ],

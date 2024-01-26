@@ -3,6 +3,20 @@ $green: #70E61C;
 $purple: #9747FF;
 $red: #E61C40;
 
+.fly-in-element{
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 10;
+    position: relative;
+    overflow: hidden;
+}
+
+.fly-in{
+    opacity: 1;
+    transform: translateX(0);
+}
+
 section {
     display: flex;
     flex-direction: column;
@@ -75,18 +89,16 @@ section {
                 }
 
                 &:hover {
-                    border: 1px solid $green;
+                    border: 1px solid #1CDAE6;
                 }
 
-                &.ng-dirty.ng-invalid {
+                &.ng-touched.ng-invalid {
                     border-color: $red;
-                    /* Rot, wenn bearbeitet und ungültig */
                 }
 
                 &.ng-valid.ng-touched,
                 &.ng-valid.ng-dirty {
                     border-color: $green;
-                    /* Grün, wenn valid und bearbeitet */
                 }
 
                 &:autofill,
@@ -153,10 +165,10 @@ section {
                 }
 
                 &:hover {
-                    border: 1px solid $green;
+                    border: 1px solid #1CDAE6;
                 }
 
-                &.ng-dirty.ng-invalid {
+                &.ng-touched.ng-invalid {
                     border-color: $red;
                 }
 
