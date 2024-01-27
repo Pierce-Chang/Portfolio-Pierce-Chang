@@ -88,12 +88,7 @@
                 </form>
             </div>
 
-            <div *ngIf="showSuccessModal" class="modal" [ngClass]="{'modal-fly-in': !flyOut, 'modal-fly-out': flyOut}">
-                <div class="modal-content">
-                    <span (click)="closeModal()" class="close">&times;</span>
-                    <p translate>Your message was sent successfully!</p>
-                </div>
-            </div>
+
         </div>
 
         <a class="scroll-up" href="#">
@@ -103,3 +98,9 @@
     <img class="purple_shadow4" src="/assets/img/purple_shadow4.png" alt="">
 </div>
 
+<div *ngIf="showSuccessModal" class="modal" [ngClass]="{'modal-fly-in': !flyOut, 'modal-fly-out': flyOut}">
+    <div class="modal-content">
+        <span (click)="closeModal()" class="close">&times;</span>
+        <p translate>Your message was sent successfully!</p>
+    </div>
+</div>
