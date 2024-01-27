@@ -34,7 +34,7 @@
                     <div class="form-group">
                         <input autocomplete="email" type="email" id="email" name="email" class="name-email-input"
                             [ngClass]="{'valid-symbol': email?.valid && email?.dirty, 'unvalid-symbol': email?.invalid && email?.dirty}"
-                            [placeholder]="emailPlaceholder" formControlName="email"/>
+                            [placeholder]="emailPlaceholder" formControlName="email" />
                         <div [class.alert-hidden]="!email?.invalid || !email?.dirty"
                             [class.alert-visible]="email?.invalid && email?.dirty" class="alert">
                             <div class="error-div" *ngIf="email?.errors?.['required']" translate>Your email is required
@@ -69,10 +69,14 @@
                                 <input style="display: none;" type="checkbox" name="accept" id="accept"
                                     formControlName="accept">
                             </div>
-                            <label for="accept">I've read the <a class="policy-link" target="_blank" href="/privacy-policy">privacy
-                                    policy</a>
-                                and agree to the processing of my data
-                                as outlined.</label>
+                            <label for="accept"><span translate>I've read the</span><a class="policy-link" target="_blank"
+                                    href="/privacy-policy" translate> privacy
+                                    policy </a>
+                                <span translate>
+                                    and agree to the processing of my data
+                                    as outlined.
+                                </span>
+                            </label>
                         </div>
                         <div *ngIf="messageForm.controls['accept'].invalid && (messageForm.controls['accept'].dirty || messageForm.controls['accept'].touched || submitted)"
                             class="error-accept">

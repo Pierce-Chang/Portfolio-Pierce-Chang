@@ -136,9 +136,7 @@ section {
             .textarea-unvalid-symbol {
                 background-repeat: no-repeat;
                 background-position: right 25px top 10px;
-                /* Position oben rechts mit etwas Abstand */
                 background-size: 25px 25px;
-                /* Passen Sie die Größe nach Bedarf an */
             }
 
             .textarea-valid-symbol {
@@ -195,7 +193,7 @@ section {
                     font-weight: 400;
                 }
 
-                span {
+                a {
                     color: $purple;
                     font-size: 14px;
                     font-weight: 400;
@@ -272,13 +270,13 @@ section {
         opacity: 0;
         max-height: 0;
         overflow: hidden;
-        transition: opacity 0.3s ease, max-height 0.3s ease;
+        transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
     }
 
     .alert-visible {
         opacity: 1;
-        max-height: 50px; // oder die Höhe Ihrer Fehlermeldung
-        transition: opacity 0.3s ease, max-height 0.3s ease;
+        max-height: 50px;
+        transition: opacity 0.3s ease, max-height 0.3s ease-in-out;
     }
 }
 
