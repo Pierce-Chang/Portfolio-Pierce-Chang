@@ -175,6 +175,27 @@ $purple: #9747FF;
     display: none !important;
 }
 
+@media (min-width: 1920px) {
+    .skill-icons {
+        margin-left: calc((100vw - 1720px) / 2 - 15px) !important;
+    }
+
+    .my-skills-p {
+        margin-right: calc((100vw - 1720px) / 2);
+        align-items: center !important;
+
+        p {
+            margin-right: unset !important;
+            padding-top: 0 !important;
+            text-align: center !important;
+        }
+    }
+
+    .my-skills-line {
+        display: none;
+    }
+}
+
 @media (max-width: 1400px) { 
     .skill-icons {
         gap: 30px 80px !important;
@@ -303,7 +324,7 @@ $purple: #9747FF;
          padding-top: 40px;
          grid-template-columns: repeat(3, 1fr) !important;
          grid-template-rows: repeat(4, 1fr) !important;
-         gap: 20px 56px !important;
+         gap: 20px 24px !important;
          margin: 0 25px !important;
  
          img {

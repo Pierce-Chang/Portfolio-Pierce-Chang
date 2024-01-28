@@ -414,6 +414,17 @@ section {
     }
 }
 
+@media (min-width: 1920px) {
+    .short-line-p {
+        width: calc((100vw - 1720px) / 2 - 50px) !important;
+    }
+
+    section {
+        margin-right: calc((100vw - 1720px) / 2);
+        margin-left: calc((100vw - 1720px) / 2);
+    }
+}
+
 @media (max-width: 1200px) {
     .purple_shadow4 {
         height: 500px;
@@ -513,7 +524,7 @@ section {
     }
 
     .purple_shadow4 {
-        margin-top: 43em;
+        margin-top: 48rem;
     }
 
     .div-accept {
@@ -525,6 +536,7 @@ section {
     }
 
     .container-contact-me {
+        width: 290px !important;
         h3 {
             font-size: 23px !important;
             position: relative;

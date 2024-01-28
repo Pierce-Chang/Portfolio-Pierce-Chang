@@ -2,6 +2,14 @@ $background-color: #141D2F;
 $green: #70E61C;
 $purple: #9747FF;
 
+.fix-width {
+    width: 1720px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 header {
     z-index: 9999;
     background-color: $background-color;
@@ -12,7 +20,7 @@ header {
     height: 110px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 100px;
 
     img {
@@ -95,6 +103,11 @@ header {
 }
 
 
+@media (min-width: 1920px) {
+    header {
+        padding: 0;
+    }
+}
 
 @media (max-width: 800px) {
 

@@ -1,40 +1,42 @@
 <header>
-    <a href="https://www.pierce-chang.de"><img src="/assets/img/pierce_logo.png" alt=""></a>
+    <div class="fix-width">
+        <a href="https://www.pierce-chang.de"><img src="/assets/img/pierce_logo.png" alt=""></a>
 
-    <nav>
-        <div class="nav-container">
-            <div>
-                <a translate id="tab1" href="#about-me" (click)="setActiveLink('tab1')"
-                    [class.active]="activeLink === 'tab1'">About
-                    me</a>
-                <div class="link-underline" [class.active]="activeLink === 'tab1'"></div>
+        <nav>
+            <div class="nav-container">
+                <div>
+                    <a translate id="tab1" href="#about-me" (click)="setActiveLink('tab1')"
+                        [class.active]="activeLink === 'tab1'">About
+                        me</a>
+                    <div class="link-underline" [class.active]="activeLink === 'tab1'"></div>
+                </div>
+                <div>
+                    <a translate id="tab2" href="#my-skills" (click)="setActiveLink('tab2')"
+                        [class.active]="activeLink === 'tab2'">Skills</a>
+                    <div class="link-underline" [class.active]="activeLink === 'tab2'"></div>
+                </div>
+                <div>
+                    <a id="tab3" href="#portfolio" (click)="setActiveLink('tab3')"
+                        [class.active]="activeLink === 'tab3'">Portfolio</a>
+                    <div class="link-underline" [class.active]="activeLink === 'tab3'"></div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <a (click)="translate.use('de');">DE</a>
+                    <span style="color: white; font-size: 23px;"> | </span>
+                    <a (click)="translate.use('en');">EN</a>
+                </div>
             </div>
-            <div>
-                <a translate id="tab2" href="#my-skills" (click)="setActiveLink('tab2')"
-                    [class.active]="activeLink === 'tab2'">Skills</a>
-                <div class="link-underline" [class.active]="activeLink === 'tab2'"></div>
-            </div>
-            <div>
-                <a id="tab3" href="#portfolio" (click)="setActiveLink('tab3')"
-                    [class.active]="activeLink === 'tab3'">Portfolio</a>
-                <div class="link-underline" [class.active]="activeLink === 'tab3'"></div>
-            </div>
-            <div style="display: flex; align-items: center;">
-                <a (click)="translate.use('de');">DE</a>
-                <span style="color: white; font-size: 23px;"> | </span>
-                <a (click)="translate.use('en');">EN</a>
-            </div>
-        </div>
 
 
 
-        <div (click)="toggleMenu()" class="burger-menu" *ngIf="isMenuOpen">
-            <div class="menu-content">
-                <a translate id="tab1" href="#about-me" (click)="setActiveLink('tab1')">About me</a>
-                <a translate id="tab2" href="#my-skills" (click)="setActiveLink('tab2')">Skills</a>
-                <a id="tab3" href="#portfolio" (click)="setActiveLink('tab3')">Portfolio</a>
+            <div (click)="toggleMenu()" class="burger-menu" *ngIf="isMenuOpen">
+                <div class="menu-content">
+                    <a translate id="tab1" href="#about-me" (click)="setActiveLink('tab1')">About me</a>
+                    <a translate id="tab2" href="#my-skills" (click)="setActiveLink('tab2')">Skills</a>
+                    <a id="tab3" href="#portfolio" (click)="setActiveLink('tab3')">Portfolio</a>
+                </div>
             </div>
-        </div>
-        <button class="burger-button" (click)="toggleMenu()"><img src="/assets/img/burger_menu.png" alt=""></button>
-    </nav>
+            <button class="burger-button" (click)="toggleMenu()"><img src="/assets/img/burger_menu.png" alt=""></button>
+        </nav>
+    </div>
 </header>

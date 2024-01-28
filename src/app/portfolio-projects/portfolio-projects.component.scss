@@ -167,6 +167,10 @@ section {
             justify-content: center;
         }
 
+        .text-end {
+            text-align: center;
+        }
+
         .project-infos {
             width: 100%;
             padding: 0 20px;
@@ -219,6 +223,7 @@ section {
 
     .container-buttons {
         margin-top: 16px;
+        gap: 20px !important;
         .live-test {
             font-size: 23px !important;
         }

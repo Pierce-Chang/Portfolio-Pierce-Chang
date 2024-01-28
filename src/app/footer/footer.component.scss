@@ -78,6 +78,16 @@ section {
     }
 }
 
+@media (min-width: 1920px) {
+    .logo-impressum {
+        margin-left: calc((100vw - 1720px) / 2);
+    }
+
+    .media-buttons {
+        margin-right: calc((100vw - 1720px) / 2);
+    }
+}
+
 @media (max-width: 1200px) {
     .codedby {
         font-size: 16px;
