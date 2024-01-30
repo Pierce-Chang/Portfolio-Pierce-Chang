@@ -1,5 +1,6 @@
 section {
     color: white;
+    margin-top: 110px;
     padding: 100px 100px;
 
     h1 {
@@ -17,8 +18,17 @@ section {
     word-wrap: break-word;
 }
 
+@media (min-width: 1920px) {
+    section {
+        margin-left: calc((100vw - 1720px) / 2);
+        margin-right: calc((100vw - 1720px) / 2);
+        padding: 50px 0px;
+    }
+}
+
 @media (max-width: 800px) {
     section {
+        text-wrap: balance;
         padding: 50px 20px;
 
         h1 {
@@ -27,7 +37,7 @@ section {
         }
 
         h2 {
-            font-size: 24px;
+            font-size: 20px;
         }
 
         p {

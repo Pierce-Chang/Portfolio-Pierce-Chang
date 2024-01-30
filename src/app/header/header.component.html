@@ -20,7 +20,7 @@
                         [class.active]="activeLink === 'tab3'">Portfolio</a>
                     <div class="link-underline" [class.active]="activeLink === 'tab3'"></div>
                 </div>
-                <div style="display: flex; align-items: center;">
+                <div class="container-translate" style="display: flex; align-items: center;">
                     <a (click)="translate.use('de');">DE</a>
                     <span style="color: white; font-size: 23px;"> | </span>
                     <a (click)="translate.use('en');">EN</a>
@@ -34,9 +34,19 @@
                     <a translate id="tab1" href="#about-me" (click)="setActiveLink('tab1')">About me</a>
                     <a translate id="tab2" href="#my-skills" (click)="setActiveLink('tab2')">Skills</a>
                     <a id="tab3" href="#portfolio" (click)="setActiveLink('tab3')">Portfolio</a>
+                    <div class="container-translate" style="display: flex; align-items: center;">
+                        <a (click)="translate.use('de');">DE</a>
+                        <span style="color: white; font-size: 23px;"> | </span>
+                        <a (click)="translate.use('en');">EN</a>
+                    </div>
                 </div>
             </div>
-            <button class="burger-button" (click)="toggleMenu()"><img src="/assets/img/burger_menu.png" alt=""></button>
+            <button class="burger-button" (click)="toggleMenu()">
+                <img src="/assets/img/burger_menu.png" alt="" [class.show]="!isMenuOpen && !isAnimating">
+                <img src="/assets/img/half_burger.png" alt="" [class.show]="showHalfBurger">
+                <img src="/assets/img/half_close.png" alt="" [class.show]="showHalfClose">
+                <img src="/assets/img/burger_close.png" alt="" [class.show]="isMenuOpen && !isAnimating">
+            </button>
         </nav>
     </div>
 </header>

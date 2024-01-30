@@ -2,6 +2,23 @@ $background-color: #141D2F;
 $green: #70E61C;
 $purple: #9747FF;
 
+@keyframes openLaptop {
+    0% {
+        transform: rotateX(80deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+.laptop-animation {
+    animation-name: openLaptop;
+    animation-duration: 800ms;
+    animation-fill-mode: forwards;
+    transform-origin: center bottom -40px;
+}
 
 section {
     display: flex;
@@ -16,6 +33,7 @@ section {
         width: 450px;
         position: relative;
         z-index: 1;
+        opacity: 0;
     }
 
     .align-end {

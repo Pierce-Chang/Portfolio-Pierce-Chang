@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-portfolio-projects',
@@ -13,4 +13,15 @@ export class PortfolioProjectsComponent {
   @Input() isReversed: boolean = false;
   @Input() liveTestLink?: string;
   @Input() gitHubLink?: string;
+  @ViewChild('laptopImage', { static: false }) laptopImage!: ElementRef;
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    const position = this.laptopImage.nativeElement.getBoundingClientRect();
+    
+    // Überprüfen, ob das Element im sichtbaren Bereich ist
+    if (position.top >= 0 && position.bottom <= window.innerHeight) {
+      this.laptopImage.nativeElement.classList.add('laptop-animation');
+    }
+  }
 }

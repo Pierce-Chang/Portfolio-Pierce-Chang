@@ -69,13 +69,10 @@
                                 <input style="display: none;" type="checkbox" name="accept" id="accept"
                                     formControlName="accept">
                             </div>
-                            <label for="accept"><span translate>I've read the</span><a class="policy-link" target="_blank"
-                                    href="/privacy-policy" translate> privacy
+                            <label for="accept"><span translate>I've read the</span><a class="policy-link"
+                                    routerLink="/privacy-policy" translate> privacy
                                     policy </a>
-                                <span translate>
-                                    and agree to the processing of my data
-                                    as outlined.
-                                </span>
+                                <span translate>and agree to the processing of my data as outlined.</span>
                             </label>
                         </div>
                         <div *ngIf="messageForm.controls['accept'].invalid && (messageForm.controls['accept'].dirty || messageForm.controls['accept'].touched || submitted)"

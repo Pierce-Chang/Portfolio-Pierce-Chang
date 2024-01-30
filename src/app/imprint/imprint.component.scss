@@ -1,23 +1,33 @@
 section {
+    min-height: calc(100vh - 491px);
+    margin-top: 100px;
+    margin-bottom: 120px;
     color: white;
     padding: 50px 100px;
 
     h1 {
         font-size: 90px;
+        margin-bottom: 70px;
     }
 
     h2 {
-        font-size: 60px;
+        font-size: 32px;
+        margin-bottom: 50px;
+    }
+
+    h3 {
+        font-size: 32px;
+        margin-top: 50px;
     }
 
     p {
-        font-size: 30px;
+        font-size: 23px;
     }
 
     a {
         color: white;
         text-decoration: none;
-        font-size: 30px;
+        font-size: 23px;
         font-weight: 400;
 
         &:hover {
@@ -28,24 +38,28 @@ section {
     }
 }
 
+@media (min-width: 1920px) {
+    section {
+        margin-left: calc((100vw - 1720px) / 2);
+        padding: 50px 0px;
+    }
+}
+
 @media (max-width: 800px) {
     section {
-        padding: 50px 20px;
+        padding: 50px 25px;
 
         h1 {
-            font-size: 60px;
+            font-size: 50px;
         }
 
         h2 {
-            font-size: 40px;
+            font-size: 28px;
+            text-wrap: balance;
         }
 
-        p {
-            font-size: 20px;
-        }
-
-        a {
-            font-size: 20px;
+        h3 {
+            font-size: 26px;
         }
     }
 }
