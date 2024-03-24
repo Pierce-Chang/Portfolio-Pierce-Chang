@@ -345,10 +345,29 @@ section {
     cursor: pointer;
 }
 
+@keyframes jump-slow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
 .scroll-up {
+    position: relative;
+    animation: jump-slow 1.5s ease-in-out infinite;
     align-self: flex-end;
     padding-top: 50px;
     cursor: pointer;
+    transition: all 125ms ease-in-out;
+
+    &:hover {
+        scale: 1.1;
+    }
 }
 
 .purple_shadow4 {
@@ -502,6 +521,8 @@ section {
     }
 
     .button-container {
+        margin-top: 20px;
+
         .submit-button {
             font-size: 16px;
         }
@@ -537,6 +558,7 @@ section {
 
     .container-contact-me {
         width: 290px !important;
+
         h3 {
             font-size: 23px !important;
             position: relative;

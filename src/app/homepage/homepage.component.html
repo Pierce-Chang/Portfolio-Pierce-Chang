@@ -3,11 +3,20 @@
 <app-my-skills id="my-skills"></app-my-skills>
 <app-portfolio-head id="portfolio"></app-portfolio-head>
 <app-portfolio-projects 
+    [imageUrl]="'/assets/img/dabubble_laptop.png'"
+    [title]="'DA Bubble -ONWORKING-'"
+    [languages]="'Angular | TypeScript | Firebase'"
+    [description]="'DABubble_DESC' | translate"
+    [isReversed]="false"
+    [liveTestLink]="'https://dabubble.pierce-chang.de/'"
+    [gitHubLink]="'https://github.com/Pierce-Chang/DA-Bubble'">
+</app-portfolio-projects>
+<app-portfolio-projects 
     [imageUrl]="'/assets/img/join_laptop.png'"
     [title]="'Join'"
     [languages]="'JavaScript | HTML | CSS'"
     [description]="'JOIN_DESC' | translate"
-    [isReversed]="false"
+    [isReversed]="true"
     [liveTestLink]="'https://join-taskmanager.pierce-chang.de'"
     [gitHubLink]="'https://github.com/Pierce-Chang/Join-Taskmanager'">
 </app-portfolio-projects>
@@ -16,26 +25,17 @@
     [title]="'El Pollo Loco'"
     [languages]="'JavaScript | HTML | CSS'"
     [description]="'POLLOLOCO_DESC' | translate"
-    [isReversed]="true"
+    [isReversed]="false"
     [liveTestLink]="'https://polloloco.pierce-chang.de/'"
     [gitHubLink]="'https://github.com/Pierce-Chang/El-Polo-Loco-Jump-and-Run'">
 </app-portfolio-projects>
 <app-portfolio-projects 
-    [imageUrl]="'/assets/img/ringoffire_laptop.png'"
-    [title]="'Ring of Fire'"
-    [languages]="'Angular | TypeScript | Firebase'"
-    [description]="'ROF_DESC' | translate"
-    [isReversed]="false"
-    [liveTestLink]="'https://ringoffire.pierce-chang.de/'"
-    [gitHubLink]="'https://github.com/Pierce-Chang/Ring-of-Fire'">
-</app-portfolio-projects>
-<app-portfolio-projects 
-    [imageUrl]="'/assets/img/pokedex_laptop.png'"
-    [title]="'Pokédex'"
-    [languages]="'JavaScript | HTML | CSS | API'"
-    [description]="'POKEMON_DESC' | translate"
+    [imageUrl]="'/assets/img/simplecrm_laptop.png'"
+    [title]="'Simple CRM'"
+    [languages]="'Angular | TypeScript | Firebase | API'"
+    [description]="'SIMPLECRM_DESC' | translate"
     [isReversed]="true"
-    [liveTestLink]="'https://pokedex.pierce-chang.de/'"
-    [gitHubLink]="'https://github.com/Pierce-Chang/Pokedex'">
+    [liveTestLink]="'https://simplecrm.pierce-chang.de/'"
+    [gitHubLink]="'https://github.com/Pierce-Chang/Simple-CRM'">
 </app-portfolio-projects>
 <app-contact id="contact"></app-contact>

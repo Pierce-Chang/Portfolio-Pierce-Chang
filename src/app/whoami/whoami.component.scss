@@ -84,13 +84,13 @@ section {
     width: 23px;
     position: absolute;
     right: 0;
-    bottom: 8px;
+    bottom: 16px;
     margin-right: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 42px;
+    gap: 50px;
     z-index: 1;
 
     p {
@@ -101,11 +101,6 @@ section {
         transform: translateY(-2px);
         white-space: nowrap;
         pointer-events: none;
-    }
-
-    img {
-        width: 30px;
-        height: 30px;
     }
 }
 
@@ -138,7 +133,7 @@ section {
 
         span {
             white-space: nowrap;
-            font-size: 64px;
+            font-size: 43px;
             font-weight: 400;
             padding-right: 14px;
         }
@@ -193,10 +188,131 @@ section {
 .photo_shadows {
     position: absolute;
     bottom: -200px;
-    left: -180px;
+    left: -114px;
     height: 100vh;
     z-index: 0;
     pointer-events: none;
+}
+
+#mouse-scroll {
+    display: block;
+}
+
+#mouse-scroll {
+    transform: translateX(-50%);
+    z-index: 9999;
+    margin-left: 19px;
+}
+
+#mouse-scroll span {
+    display: block;
+    width: 5px;
+    height: 5px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    margin: 0 0 3px 5px;
+}
+
+#mouse-scroll .mouse {
+    height: 21px;
+    width: 14px;
+    border-radius: 10px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    border: 2px solid #ffffff;
+    top: 170px;
+}
+
+#mouse-scroll .down-arrow-1 {
+    margin-top: 6px;
+}
+
+#mouse-scroll .down-arrow-1,
+#mouse-scroll .down-arrow-2,
+#mouse-scroll .down-arrow-3 {
+    animation: mouse-scroll 1s infinite;
+    -moz-animation: mouse-scroll 1s infinite;
+}
+
+#mouse-croll .down-arrow-1 {
+    animation-delay: .1s;
+    -moz-animation-delay: .1s;
+    animation-direction: alternate;
+}
+
+#mouse-scroll .down-arrow-2 {
+    animation-delay: .2s;
+    -moz-animation-delay: .2s;
+    animation-direction: alternate;
+}
+
+#mouse-scroll .down-arrow-3 {
+    animation-delay: .3s;
+    -moz-animation-dekay: .3s;
+    animation-direction: alternate;
+}
+
+#mouse-scroll .mouse-in {
+    height: 5px;
+    width: 2px;
+    display: block;
+    margin: 5px auto;
+    background: #ffffff;
+    position: relative;
+}
+
+#mouse-scroll .mouse-in {
+    animation: animated-mouse 1.2s ease infinite;
+    animation: mouse-animated 1.2s ease infinite;
+}
+
+@keyframes animated-mouse {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(6px);
+        -ms-transform: translateY(6px);
+        transform: translateY(6px);
+    }
+}
+
+@keyframes mouse-scroll {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes mouse-scroll {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @media (min-width: 1920px) {
@@ -219,7 +335,7 @@ section {
 
     .photo_shadows {
         bottom: -200px;
-        left: -80px;
+        left: -4px;
         height: 100vh;
     }
 }
@@ -234,8 +350,8 @@ section {
     }
 
     .container-whoami .iam span {
-        font-size: 57px;
-        padding-right: 8px;
+        font-size: 37px;
+        padding-right: 12px;
     }
 
     .container-whoami a {
@@ -262,7 +378,7 @@ section {
     }
 
     .container-whoami {
-        top: 0;
+        top: -32px;
         left: 50%;
         transform: translateX(-56%) scale(0.85);
         width: fit-content;
@@ -363,7 +479,7 @@ section {
     }
 
     .pierce_profile {
-        bottom: -10vh;
+        bottom: -14vh;
         height: calc(110vh - 260px);
     }
 }

@@ -15,13 +15,18 @@ export class PortfolioProjectsComponent {
   @Input() gitHubLink?: string;
   @ViewChild('laptopImage', { static: false }) laptopImage!: ElementRef;
 
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll() {
-    const position = this.laptopImage.nativeElement.getBoundingClientRect();
-    
-    // Überprüfen, ob das Element im sichtbaren Bereich ist
-    if (position.top >= 0 && position.bottom <= window.innerHeight) {
-      this.laptopImage.nativeElement.classList.add('laptop-animation');
-    }
+/**
+ * Handles the window scroll event to apply an animation class to the laptop image.
+ * Checks if the laptop image is fully visible in the viewport and adds a class to trigger an animation.
+ */
+@HostListener('window:scroll', ['$event'])
+onWindowScroll() {
+  const position = this.laptopImage.nativeElement.getBoundingClientRect();
+  
+  // Checks if the element is within the visible viewport
+  if (position.top >= 0 && position.bottom <= window.innerHeight) {
+    this.laptopImage.nativeElement.classList.add('laptop-animation');
   }
+}
+
 }

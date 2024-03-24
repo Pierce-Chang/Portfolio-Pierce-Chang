@@ -1,22 +1,22 @@
 <header>
     <div class="fix-width">
-        <a href="https://www.pierce-chang.de"><img src="/assets/img/pierce_logo.png" alt=""></a>
+        <a class="logo" href="https://www.pierce-chang.de"><img src="/assets/img/pierce_logo.png" alt=""></a>
 
         <nav>
             <div class="nav-container">
                 <div>
-                    <a translate id="tab1" href="#about-me" (click)="setActiveLink('tab1')"
+                    <a translate id="tab1" (click)="setActiveLink('tab1'); scrollToSectionWithOffset('about-me', 80)"
                         [class.active]="activeLink === 'tab1'">About
                         me</a>
                     <div class="link-underline" [class.active]="activeLink === 'tab1'"></div>
                 </div>
                 <div>
-                    <a translate id="tab2" href="#my-skills" (click)="setActiveLink('tab2')"
+                    <a translate id="tab2" (click)="setActiveLink('tab2'); scrollToSection('my-skills')"
                         [class.active]="activeLink === 'tab2'">Skills</a>
                     <div class="link-underline" [class.active]="activeLink === 'tab2'"></div>
                 </div>
                 <div>
-                    <a id="tab3" href="#portfolio" (click)="setActiveLink('tab3')"
+                    <a id="tab3" (click)="setActiveLink('tab3'); scrollToSectionWithOffset('portfolio', -30)"
                         [class.active]="activeLink === 'tab3'">Portfolio</a>
                     <div class="link-underline" [class.active]="activeLink === 'tab3'"></div>
                 </div>
@@ -31,9 +31,9 @@
 
             <div (click)="toggleMenu()" class="burger-menu" *ngIf="isMenuOpen">
                 <div class="menu-content">
-                    <a translate id="tab1" href="#about-me" (click)="setActiveLink('tab1')">About me</a>
-                    <a translate id="tab2" href="#my-skills" (click)="setActiveLink('tab2')">Skills</a>
-                    <a id="tab3" href="#portfolio" (click)="setActiveLink('tab3')">Portfolio</a>
+                    <a translate id="tab1" (click)="setActiveLink('tab1'); scrollToSection('about-me')">About me</a>
+                    <a translate id="tab2" (click)="setActiveLink('tab2'); scrollToSection('my-skills')">Skills</a>
+                    <a id="tab3" (click)="setActiveLink('tab3'); scrollToSection('portfolio')">Portfolio</a>
                     <div class="container-translate" style="display: flex; align-items: center;">
                         <a (click)="translate.use('de');">DE</a>
                         <span style="color: white; font-size: 23px;"> | </span>
