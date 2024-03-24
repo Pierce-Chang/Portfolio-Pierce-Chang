@@ -153,10 +153,32 @@ header {
     }
 }
 
+@media (max-width: 900px) {
+
+    .burger-button {
+        display: block;
+        margin-right: 75px;
+    }
+
+    .nav-container {
+        display: none;
+    }
+
+    header nav a {
+        font-size: 40px;
+        margin: 20px 0;
+    }
+
+    .container-translate {
+        gap: 20px;
+    }
+}
+
 @media (max-width: 800px) {
 
     .burger-button {
         display: block;
+        margin-right: 0px;
     }
 
     .nav-container {
