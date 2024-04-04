@@ -24,7 +24,7 @@ onWindowScroll() {
   const position = this.laptopImage.nativeElement.getBoundingClientRect();
   
   // Checks if the element is within the visible viewport
-  if (position.top >= 0 && position.bottom <= window.innerHeight) {
+  if (position.top >= 0 && position.bottom -100 <= window.innerHeight) {
     this.laptopImage.nativeElement.classList.add('laptop-animation');
   }
 }
