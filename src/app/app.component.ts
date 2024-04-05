@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
+  @ViewChild('loadingOverlay') loadingOverlay!: ElementRef;
   title = 'Pierce-Chang_Portfolio';
   isLoading: boolean = true;
   message: string = '';
@@ -23,8 +24,15 @@ export class AppComponent implements OnInit {
       setTimeout(() => this.typeMessage(), 50);
     } else {
       setTimeout(() => {
-        this.isLoading = false;
+        this.fadeOutLoading();
       }, 1500);
     }
+  }
+
+  fadeOutLoading(): void {
+    this.loadingOverlay.nativeElement.classList.add('fade-out');
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1500);
   }
 }
