@@ -5,13 +5,23 @@ import { Injectable } from '@angular/core';
 })
 export class LoadStateService {
 
-  private imagesLoaded: boolean = false;
+  private static readonly IMAGES_LOADED_KEY = 'imagesLoaded';
+
+  checkImagesLoadedStatus(): void {
+    const imagesLoaded = sessionStorage.getItem(LoadStateService.IMAGES_LOADED_KEY);
+    if (imagesLoaded) {
+      this.setImagesLoaded(true);
+    } else {
+      this.setImagesLoaded(false);
+    }
+  }
 
   setImagesLoaded(loaded: boolean): void {
-    this.imagesLoaded = loaded;
+    sessionStorage.setItem(LoadStateService.IMAGES_LOADED_KEY, loaded ? 'true' : 'false');
   }
 
   getImagesLoaded(): boolean {
-    return this.imagesLoaded;
+    const imagesLoaded = sessionStorage.getItem(LoadStateService.IMAGES_LOADED_KEY);
+    return imagesLoaded === 'true';
   }
 }
