@@ -18,6 +18,18 @@ section {
     word-wrap: break-word;
 }
 
+.back_arrow {
+    height: 30px;
+    filter: invert(1);
+    margin-bottom: 50px;
+    transition: 125ms;
+    cursor: pointer;
+    
+    &:hover {
+        scale: 1.2;
+    }
+}
+
 @media (min-width: 1920px) {
     section {
         margin-left: calc((100vw - 1720px) / 2);
