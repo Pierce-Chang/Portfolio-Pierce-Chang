@@ -6,6 +6,7 @@ $purple: #9747FF;
 .logo {
     position: relative;
     transition: 125ms;
+    cursor: pointer;
 
     &:hover {
         scale: 1.2;

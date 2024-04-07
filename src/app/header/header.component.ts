@@ -28,11 +28,18 @@ export class HeaderComponent {
 
   /**
    * Scrolls to a specific section of the page smoothly.
+   * If the section does not exist, go back to the previous page.
    * @param {string} sectionId The ID of the section to scroll to.
    */
   scrollToSection(sectionId: string): void {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    const sectionElement = document.getElementById(sectionId);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.history.back();
+    }
   }
+
 
   /**
    * Scrolls to a specific section of the page with a specified offset smoothly.
