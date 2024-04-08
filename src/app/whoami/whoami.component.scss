@@ -152,6 +152,9 @@ section {
         color: white;
         cursor: pointer;
         transition: 75ms ease-in-out;
+        animation: pulse 3s infinite ease-in-out;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+        text-shadow: 0px 2px 6px rgba(0, 0, 0, 1);
 
         &:hover {
             background-color: $purple;
@@ -165,6 +168,20 @@ section {
         }
     }
 }
+
+@keyframes pulse {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.1;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
 
 
 .vector-bg {
