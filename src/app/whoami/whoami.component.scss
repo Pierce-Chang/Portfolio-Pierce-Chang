@@ -332,6 +332,40 @@ section {
     }
 }
 
+@media (min-width: 2560px) {
+    .fix-width {
+        width: 2560px;
+    }
+
+    section {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        margin-bottom: 40px;
+    }
+
+    .purple-line {
+        width: calc((100vw - 1720px) / 2 - 42px) !important;
+    }
+
+    .pierce_profile {
+        left: 250px;
+        height: 90vh;
+        bottom: 0px;
+    }
+
+    .photo_shadows {
+        bottom: 0px;
+        left: -4px;
+        height: 100vh;
+    }
+
+    .vector-bg {
+        bottom: 0px;
+        height: 60%;
+    }
+}
+
 @media (min-width: 1920px) {
     section {
         width: 100%;
@@ -497,6 +531,13 @@ section {
 
     .pierce_profile {
         bottom: -14vh;
+        height: calc(110vh - 260px);
+    }
+}
+
+@media (max-width: 450px) {
+    .pierce_profile {
+        bottom: -18vh;
         height: calc(110vh - 260px);
     }
 }
